@@ -163,9 +163,9 @@ h3 {
   100% { background-color: #fee402; box-shadow: 0 0 40px #fee402; }
 }
 @keyframes greenGlow {
-  0% { background-color: #2ab243; box-shadow: 0 0 3px #2ab243; }
-  50% { background-color: #248f38; box-shadow: 0 0 40px #248f38 }
-  100% { background-color: #2ab243; box-shadow: 0 0 40px #2ab243; } 
+  0% { background-color: #1be223; box-shadow: 0 0 3px #1be223; }
+  50% { background-color: #2ab243; box-shadow: 0 0 40px #2ab243; }
+  100% { background-color: #1be223; box-shadow: 0 0 40px #1be223; } 
 }
 @keyframes blueGlow {
   0% { background-color: #00afe4; box-shadow: 0 0 3px #00afe4; }
