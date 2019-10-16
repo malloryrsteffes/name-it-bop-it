@@ -1,33 +1,86 @@
 <div id="home">
-  <div class="container">
+  <div style="height: 100vh">
+    <div class="flex-center flex-column">
+
+      <h1 class="animated slideInUp bounce mb-4">
+        Name My...</h1>
+      <button class="btn btn-primary btn-lg animated slideInUp mb-3" id="babyButton">Baby</button>
+      <button class="btn btn-danger btn-lg animated slideInUp mb-3" id="petButton">Pet</button>
+      <button class="btn btn-success btn-lg animated slideInUp mb-3" id="carButton">Car</button>
+      <button class="btn btn-warning btn-lg animated slideInUp mb-3" id="boatButton">Boat</button>
+
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4">
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+    <!-- Grid row -->
     <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+        <!-- Content -->
+        <h5 class="text-uppercase">Name It, Bop It!</h5>
+        <p>This app was created using Node and an Express web server. It is backed by a mySQL database with a Sequelize ORM, and utilizes MD Bootstrap for front-end design.</p>
+
+      </div>
+      <!-- Grid column -->
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <!-- Links -->
+        <h5 class="text-uppercase">Collaborators</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            Aaron Jackson - Back-End Design
           </li>
-          {{/each}}
+          <li>
+            Allison Juarez - Front-End Design
+          </li>
+          <li>
+            Mallory Steffes - Project Manager
+          </li>
+          <li>
+            Sid Hicks - Back-End Design
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <!-- Links -->
+        <h5 class="text-uppercase">Find Us</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Github</a> / <a href="#!">LinkedIn</a>
+          </li>
+          <li>
+            <a href="#!">Github</a> / <a href="#!">LinkedIn</a>
+          </li>
+          <li>
+            <a href="#!">Github</a> / <a href="#!">LinkedIn</a>
+          </li>
+          <li>
+            <a href="#!">Github</a> / <a href="#!">LinkedIn</a>
+          </li>
         </ul>
       </div>
     </div>
   </div>
-</div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright
+  </div>
+
+</footer>
+
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/js/mdb.min.js"></script><script src="/js/index.js"></script>
