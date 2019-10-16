@@ -2,7 +2,7 @@ CREATE DATABASE bopIt_db;
 
 USE bopIt_db;
 
-CREATE TABLE baby 
+CREATE TABLE baby
 (
     id INT NOT NULL AUTO_INCREMENT,
     birthYear VARCHAR(225) NOT NULL,
@@ -15,6 +15,20 @@ CREATE TABLE baby
 );
 
 CREATE TABLE pet
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(225) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE car_name
+(
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(225) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE boat_name
 (
     id INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(225) NOT NULL,
