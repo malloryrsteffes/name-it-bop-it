@@ -2,6 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
+
   app.get("/api/test/:name", function(req, res) {
     console.log("test route hit");
 
@@ -15,6 +16,7 @@ module.exports = function(app) {
       res.json(Baby);
       console.table(Baby[0].name);
       console.log(Baby[0].name);
+
     });
   });git checkout
 
@@ -25,12 +27,12 @@ module.exports = function(app) {
   //   });
   // });
 
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(
-  //     dbExample
-  //   ) {
-  //     res.json(dbExample);
-  //   });
-  // });
+  // Delete an example by id
+  app.delete("/api/examples/:id", function(req, res) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
+      res.json(dbExample);
+    });
+  });
 };
