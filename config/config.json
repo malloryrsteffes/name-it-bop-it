@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "root1234",
-    "database": "exampledb",
+    "password": "root",
+    "database": "bopIt_db",
     "host": "localhost",
     "dialect": "mysql"
   },
