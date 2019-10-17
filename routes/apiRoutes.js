@@ -197,7 +197,9 @@ module.exports = function(app) {
   app.get("/api/car", function(req, res) {
     console.log("car route hit");
 
+
     db.Car.findAll({})
+
     .then(function(Car) {
       console.log("looking for a car name");
 
