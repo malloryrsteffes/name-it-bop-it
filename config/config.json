@@ -3,7 +3,6 @@
     "username": "root",
     "password": "root",
     "database": "bopit_db",
-    "password":"root",
     "host": "localhost",
     "dialect": "mysql"
   },
