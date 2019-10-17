@@ -193,6 +193,28 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/car", function(req, res) {
+    console.log("car route hit");
+
+    db.Boat.findAll({})
+    .then(function(Car) {
+      console.log("looking for a car name");
+
+      function randomizes() {
+
+        var picker = Math.floor(Math.random() * Car.length) + 1;
+        console.log(`\nLooking for car name`);
+        console.log(`\nHow do you like ${Car[picker].name}?\n`);
+
+        res.json(Car[picker].name)
+
+      }
+
+      randomizes();
+
+    });
+  });
+
   // Create a new example
   // app.post("/api/examples", function(req, res) {
   //   db.Example.create(req.body).then(function(dbExample) {
