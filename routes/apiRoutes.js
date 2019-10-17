@@ -110,6 +110,7 @@ module.exports = function(app) {
     });
   });
 
+  //delivers random pet name
   app.get("/api/pet", function(req, res) {
     console.log("pets route hit");
 
@@ -121,8 +122,29 @@ module.exports = function(app) {
       function randomizes() {
 
         var picker = Math.floor(Math.random() * Pet.length) + 1;
-        console.log(`\nLooking for Baby name`);
+        console.log(`\nLooking for pet name`);
         console.log(`\nHow do you like ${Pet[picker].name}?\n`);
+      }
+
+      randomizes();
+
+    });
+  });
+
+  //delivers a random boat name
+  app.get("/api/boat", function(req, res) {
+    console.log("boat route hit");
+
+    db.Boat.findAll({})
+    .then(function(Boat) {
+      console.log("looking for a boat name");
+      res.json(Boat);
+
+      function randomizes() {
+
+        var picker = Math.floor(Math.random() * Boat.length) + 1;
+        console.log(`\nLooking for boat name`);
+        console.log(`\nHow do you like ${Boat[picker].name}?\n`);
       }
 
       randomizes();
