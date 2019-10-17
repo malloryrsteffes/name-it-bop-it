@@ -13,7 +13,9 @@ module.exports = function(app) {
     }).then(function(Baby) {
       console.log("looking for Baby");
       res.json(Baby);
+      
       var letter = req.params.letter.toUpperCase();
+
       var targetedNames = [];
 
       console.log(letter);
@@ -29,6 +31,9 @@ module.exports = function(app) {
       }
 
       firstLetter();
+      
+      console.table(Baby[0].name);
+      console.log(Baby[0].name);
     });
   });
 
@@ -110,12 +115,12 @@ module.exports = function(app) {
   //   });
   // });
 
-  // // Delete an example by id
-  // app.delete("/api/examples/:id", function(req, res) {
-  //   db.Example.destroy({ where: { id: req.params.id } }).then(function(
-  //     dbExample
-  //   ) {
-  //     res.json(dbExample);
-  //   });
-  // });
+  // Delete an example by id
+  app.delete("/api/examples/:id", function(req, res) {
+    db.Example.destroy({ where: { id: req.params.id } }).then(function(
+      dbExample
+    ) {
+      res.json(dbExample);
+    });
+  });
 };
