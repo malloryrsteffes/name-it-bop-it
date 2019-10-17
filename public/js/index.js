@@ -2,20 +2,31 @@
 
 // PET BUTTON ===================================================
 $("#petRandomizerButton").on("click", function() {
-  var search = $(this).val();
-  console.log(search);
+  $.ajax("/api/pet", {
+    method: "GET"
+  }).then(function(data) {
+    console.log(data);
+    $("#randomPet").text(data);
+  });
 });
-
 // CAR BUTTON ===================================================
 $("#carRandomizerButton").on("click", function() {
-  var search = $(this).val();
-  console.log(search);
+  $.ajax("/api/randomizes/car", {
+    method: "GET"
+  }).then(function(data) {
+    console.log(data);
+    $("#randomCar").text(data);
+  });
 });
 
 // BOAT BUTTON ===================================================
 $("#boatRandomizerButton").on("click", function() {
-  var search = $(this).val();
-  console.log(search);
+  $.ajax("/api/boat", {
+    method: "GET"
+  }).then(function(data) {
+    console.log(data);
+    $("#randomBoat").text(data);
+  });
 });
 
 // BOY BUTTON ==================================================
@@ -33,8 +44,9 @@ $("#boyRandomizerButton").on("click", function() {
 $("#girlRandomizerButton").on("click", function() {
   console.log("clicked!");
   $.ajax("/api/randomizes/girl", {
-    type: "GET"
+    method: "GET"
   }).then(function(data) {
     console.log(data);
+    $("#randomGirl").text(data);
   });
 });

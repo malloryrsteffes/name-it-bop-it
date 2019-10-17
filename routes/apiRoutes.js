@@ -133,6 +133,7 @@ module.exports = function(app) {
 
         console.log(`\nLooking for Baby Girl names`);
         console.log(`\nHow do you like ${babyGirlNames[picker]}?\n`);
+        res.json(babyGirlNames[picker]);
       }
 
       //function targets a specific name with the letter beginning with a
