@@ -13,7 +13,7 @@ module.exports = function(app) {
     }).then(function(Baby) {
       console.log("looking for Baby");
       res.json(Baby);
-      
+
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -28,15 +28,17 @@ module.exports = function(app) {
           }
         }
         console.log(targetedNames);
+        // res.json(targetedNames);
       }
 
       firstLetter();
-      
-      console.table(Baby[0].name);
-      console.log(Baby[0].name);
+
+      // console.table(Baby[0].name);
+      // console.log(Baby[0].name);
     });
   });
 
+  //randomizer grabs a random boy or girl name based on the route
   app.get("/api/randomizes/:gender", function(req, res) {
     console.log("randomizes route hit");
 
@@ -46,7 +48,7 @@ module.exports = function(app) {
       //   name: req.params.name
       // }
     }).then(function(Baby) {
-      res.json(Baby);
+      // res.json(Baby);
 
       var gender = req.params.gender;
 
@@ -75,6 +77,7 @@ module.exports = function(app) {
 
         console.log(`\nLooking for Baby Boy names`);
         console.log(`\nHow do you like ${babyBoyNames[picker]}?\n`);
+        res.json(babyBoyNames[picker])
       }
 
 
@@ -105,6 +108,48 @@ module.exports = function(app) {
 
       //randomizes();
       genderName();
+    });
+  });
+
+  //delivers random pet name
+  app.get("/api/pet", function(req, res) {
+    console.log("pets route hit");
+
+    db.Pet.findAll({})
+    .then(function(Pet) {
+      console.log("looking for a pet name");
+      res.json(Pet);
+
+      function randomizes() {
+
+        var picker = Math.floor(Math.random() * Pet.length) + 1;
+        console.log(`\nLooking for pet name`);
+        console.log(`\nHow do you like ${Pet[picker].name}?\n`);
+      }
+
+      randomizes();
+
+    });
+  });
+
+  //delivers a random boat name
+  app.get("/api/boat", function(req, res) {
+    console.log("boat route hit");
+
+    db.Boat.findAll({})
+    .then(function(Boat) {
+      console.log("looking for a boat name");
+      res.json(Boat);
+
+      function randomizes() {
+
+        var picker = Math.floor(Math.random() * Boat.length) + 1;
+        console.log(`\nLooking for boat name`);
+        console.log(`\nHow do you like ${Boat[picker].name}?\n`);
+      }
+
+      randomizes();
+
     });
   });
 
