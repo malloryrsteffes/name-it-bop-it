@@ -11,7 +11,7 @@ $("#petRandomizerButton").on("click", function() {
 });
 // CAR BUTTON ===================================================
 $("#carRandomizerButton").on("click", function() {
-  $.ajax("/api/randomizes/car", {
+  $.ajax("/api/car", {
     method: "GET"
   }).then(function(data) {
     console.log(data);
