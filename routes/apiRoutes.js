@@ -2,23 +2,36 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all examples
-
-  app.get("/api/test/:name", function(req, res) {
+  app.get("/api/test", function(req, res) {
     console.log("test route hit");
 
     db.Baby.findAll({
-      limit: 5,
-      where: {
-        name: req.params.name
-      }
+      limit: 25
+      // where: {
+      //   name: req.params.name
+      // }
     }).then(function(Baby) {
       console.log("looking for Baby");
       res.json(Baby);
+    
+      var targetedNames = [];
+
+      function firstLetter() {
+        // allNames();
+        for (i = 0; i < Baby.length; i++) {
+          if (Baby[i].name.charAt(0) === "A") {
+            targetedNames.push(Baby[i].name);
+          }
+        }
+        console.log(targetedNames);
+      }
+
+      firstLetter();
+      
       console.table(Baby[0].name);
       console.log(Baby[0].name);
-
     });
-  });git checkout
+  });
 
   // Create a new example
   // app.post("/api/examples", function(req, res) {
