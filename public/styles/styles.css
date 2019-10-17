@@ -182,7 +182,9 @@ h3 {
   50% { background-color: #ee29af; box-shadow: 0 0 40px #ee29af; }
   100% { background-color: #f171c8; box-shadow: 0 0 40px #f171c8; } 
 }
-
+p.white-text{
+  font-family: 'Open Sans', sans-serif;
+}
 
 #wrapper{
   text-align:center;
@@ -191,4 +193,55 @@ h3 {
 .button{
   margin:30px;
   width:320px;
+}
+
+/* hoover bounce for images */
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
+}
+
+.avatar{ 
+  position: relative;
+
+}
+.titleBio{
+  margin-top: 270px;
+}
+.bounce_Img {  
+  left: 70px;
+  top:0;
+  position: absolute;
+  border-radius: 50%;
+  line-height: 180px;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  color: white;
+  
+}
+span:hover {
+  cursor: pointer;
+  animation-name: bounce;
+  -moz-animation-name: bounce;
 }
