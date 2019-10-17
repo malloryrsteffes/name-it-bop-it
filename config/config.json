@@ -1,15 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "bopIt_db",
+    "database": "bopit_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "root",
+    "database": "bopit_db",
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
