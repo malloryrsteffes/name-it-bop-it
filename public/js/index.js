@@ -33,9 +33,10 @@ $("#boatRandomizerButton").on("click", function() {
 $("#boyRandomizerButton").on("click", function() {
   console.log("clicked!");
   $.ajax("/api/randomizes/boy", {
-    type: "GET"
+    method: "GET"
   }).then(function(data) {
     console.log(data);
+    $("#randomBoy").text(data);
   });
 });
 
