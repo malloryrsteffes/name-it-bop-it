@@ -1,37 +1,40 @@
-// On click events for each starter button
-
-// BABY BUTTON ===================================================
-$("#babyButton").on("click", function() {
-  var search = $(this).val();
-  console.log(search);
-});
+// On click events for each randomizer button
 
 // PET BUTTON ===================================================
-$("#petButton").on("click", function() {
+$("#petRandomizerButton").on("click", function() {
   var search = $(this).val();
   console.log(search);
 });
 
 // CAR BUTTON ===================================================
-$("#carButton").on("click", function() {
+$("#carRandomizerButton").on("click", function() {
   var search = $(this).val();
   console.log(search);
 });
 
 // BOAT BUTTON ===================================================
-$("#boatButton").on("click", function() {
+$("#boatRandomizerButton").on("click", function() {
   var search = $(this).val();
   console.log(search);
 });
 
 // BOY BUTTON ==================================================
-$("#boyButton").on("click", function() {
-  var search = $(this).val();
-  console.log(search);
+$("#boyRandomizerButton").on("click", function() {
+  console.log("clicked!");
+  $.ajax("/api/randomizes/boy", {
+    method: "GET"
+  }).then(function(data) {
+    console.log(data);
+    $("#randomBoy").text(data);
+  });
 });
 
 // GIRL BUTTON ==================================================
-$("#boyButton").on("click", function() {
-  var search = $(this).val();
-  console.log(search);
+$("#girlRandomizerButton").on("click", function() {
+  console.log("clicked!");
+  $.ajax("/api/randomizes/girl", {
+    type: "GET"
+  }).then(function(data) {
+    console.log(data);
+  });
 });

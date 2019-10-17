@@ -10,16 +10,40 @@ module.exports = function(app) {
     res.render("index");
   });
 
-  app.get("/randomizer", function(req, res) {
-    res.render("randomizer");
-  });
-
+  // BABY PAGES ===================================================
   app.get("/baby", function(req, res) {
     res.render("baby");
   });
 
-  // Load example page and pass in an example by id
-  app.get("/example/:id", function(req, res) {
+  app.get("/randomizes/girl", function(req, res) {
+    res.render("girlRandomizer");
+  });
+
+  app.get("/randomizes/boy", function(req, res) {
+    res.render("boyRandomizer");
+  });
+
+  // PET PAGE ===================================================
+  app.get("/randomizes/pet", function(req, res) {
+    res.render("petRandomizer");
+  });
+
+  // BOAT PAGE ===================================================
+  app.get("/randomizes/boat", function(req, res) {
+    res.render("boatRandomizer");
+  });
+
+  // CAR PAGE ===================================================
+  app.get("/randomizes/car", function(req, res) {
+    res.render("carRandomizer");
+  });
+
+  // Render 404 page for any unmatched routes
+  app.get("*", function(req, res) {
+    res.render("404");
+  });
+
+  app.get("/example/:id", function(Req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(
       dbExample
     ) {
@@ -27,10 +51,5 @@ module.exports = function(app) {
         example: dbExample
       });
     });
-  });
-
-  // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
   });
 };
