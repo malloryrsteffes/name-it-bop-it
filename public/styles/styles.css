@@ -115,7 +115,7 @@ h3 {
   animation: redGlow 1500ms infinite; 
 }
 
-#randomizerButton {
+.randomizerButtons {
   -webkit-animation: greenGlow 1500ms infinite;
   -moz-animation: greenGlow 1500ms infinite;
   -o-animation: greenGlow 1500ms infinite;
