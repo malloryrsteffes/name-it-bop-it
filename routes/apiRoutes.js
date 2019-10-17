@@ -48,7 +48,7 @@ module.exports = function(app) {
       //   name: req.params.name
       // }
     }).then(function(Baby) {
-      res.json(Baby);
+      // res.json(Baby);
 
       var gender = req.params.gender;
 
@@ -77,6 +77,7 @@ module.exports = function(app) {
 
         console.log(`\nLooking for Baby Boy names`);
         console.log(`\nHow do you like ${babyBoyNames[picker]}?\n`);
+        res.json(babyBoyNames[picker])
       }
 
 
