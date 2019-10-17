@@ -13,7 +13,7 @@ module.exports = function(app) {
     }).then(function(Baby) {
       console.log("looking for Baby");
       res.json(Baby);
-      
+
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -28,15 +28,17 @@ module.exports = function(app) {
           }
         }
         console.log(targetedNames);
+        // res.json(targetedNames);
       }
 
       firstLetter();
-      
-      console.table(Baby[0].name);
-      console.log(Baby[0].name);
+
+      // console.table(Baby[0].name);
+      // console.log(Baby[0].name);
     });
   });
 
+  //randomizer grabs a random boy or girl name based on the route
   app.get("/api/randomizes/:gender", function(req, res) {
     console.log("randomizes route hit");
 
@@ -105,6 +107,26 @@ module.exports = function(app) {
 
       //randomizes();
       genderName();
+    });
+  });
+
+  app.get("/api/pet", function(req, res) {
+    console.log("pets route hit");
+
+    db.Pet.findAll({})
+    .then(function(Pet) {
+      console.log("looking for a pet name");
+      res.json(Pet);
+
+      function randomizes() {
+
+        var picker = Math.floor(Math.random() * Pet.length) + 1;
+        console.log(`\nLooking for Baby name`);
+        console.log(`\nHow do you like ${Pet[picker].name}?\n`);
+      }
+
+      randomizes();
+
     });
   });
 
