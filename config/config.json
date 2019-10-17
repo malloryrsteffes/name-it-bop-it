@@ -2,6 +2,7 @@
   "development": {
     "username": "root",
     "database": "bopit_db",
+    "password": "root1234",
     "host": "localhost",
     "dialect": "mysql"
   },
