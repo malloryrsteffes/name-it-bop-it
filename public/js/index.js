@@ -7,7 +7,10 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(data) {
       console.log(data);
-      $("#randomPet").text(data);
+      let el = $("<h1>")
+      el.text(data);
+      el.addClass("animated bounce");
+      $("#randomPet").html(el);
     });
   });
   // DUCKY BUTTON ===================================================
@@ -16,7 +19,10 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(data) {
       console.log(data);
-      $("#randomDucky").text(data);
+      let el = $("<h1>")
+      el.text(data);
+      el.addClass("animated bounce");
+      $("#randomDucky").html(el);
     });
   });
 
@@ -26,7 +32,10 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(data) {
       console.log(data);
-      $("#randomBoat").text(data);
+      let el = $("<h1>")
+      el.text(data);
+      el.addClass("animated bounce");
+      $("#randomBoat").html(el);
     });
   });
 
@@ -37,7 +46,10 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(data) {
       console.log(data);
-      $("#randomBoy").text(data);
+      let el = $("<h1>")
+      el.text(data);
+      el.addClass("animated bounce");
+      $("#randomBoy").html(el);
     });
   });
 
@@ -54,7 +66,10 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(data) {
       console.log(data);
-      $("#randomBoy").text(data);
+      let el = $("<h1>")
+      el.text(data);
+      el.addClass("animated bounce");
+      $("#randomBoy").html(el);
     });
   });
 
@@ -65,11 +80,15 @@ $(document).ready(function() {
       method: "GET"
     }).then(function(data) {
       console.log(data);
-      $("#randomGirl").text(data);
+      let el = $("<h1>")
+      el.text(data);
+      el.addClass("animated bounce");
+      $("#randomGirl").html(el);
     });
   });
 
   // GIRL FIRST LETTER BUTTON ==================================================
+
 
   $("button").on("click", function() {
     console.log("clicked!");
@@ -82,8 +101,10 @@ $(document).ready(function() {
       url: "/api/girl/" + letterChosen,
       method: "GET"
     }).then(function(data) {
-      console.log(data);
-      $("#randomGirl").text(data);
+      let el = $("<h1>")
+      el.text(data);
+      el.addClass("animated bounce");
+      $("#randomGirl").html(el);
     });
   });
 });

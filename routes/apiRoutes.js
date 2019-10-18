@@ -32,8 +32,6 @@ module.exports = function(app) {
 
       firstLetter();
 
-      // console.table(Baby[0].name);
-      // console.log(Baby[0].name);
     });
   });
 
@@ -68,8 +66,6 @@ module.exports = function(app) {
 
       firstLetter();
 
-      // console.table(Baby[0].name);
-      // console.log(Baby[0].name);
     });
   });
 
@@ -192,22 +188,22 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/car", function(req, res) {
+  app.get("/api/ducky", function(req, res) {
     console.log("car route hit");
 
 
-    db.Car.findAll({})
+    db.Ducky.findAll({})
 
-    .then(function(Car) {
-      console.log("looking for a car name");
+    .then(function(Ducky) {
+      console.log("looking for a ducky name");
 
       function randomizes() {
 
-        var picker = Math.floor(Math.random() * Car.length) + 1;
+        var picker = Math.floor(Math.random() * Ducky.length) + 1;
         console.log(`\nLooking for car name`);
-        console.log(`\nHow do you like ${Car[picker].name}?\n`);
+        console.log(`\nHow do you like ${Ducky[picker].name}?\n`);
 
-        res.json(Car[picker].name)
+        res.json(Ducky[picker].name)
 
       }
 
@@ -216,19 +212,5 @@ module.exports = function(app) {
     });
   });
 
-  // Create a new example
-  // app.post("/api/examples", function(req, res) {
-  //   db.Example.create(req.body).then(function(dbExample) {
-  //     res.json(dbExample);
-  //   });
-  // });
-
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
-  });
 };
