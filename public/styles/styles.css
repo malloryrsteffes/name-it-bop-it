@@ -154,7 +154,12 @@ h3 {
   animation: redGlow 1500ms infinite;
   
 }
-
+#petRandomizerButton {
+  -webkit-animation: yellowGlow 1500ms infinite;
+  -moz-animation: yellowGlow 1500ms infinite;
+  -o-animation: yellowGlow 1500ms infinite;
+  animation: yellowGlow 1500ms infinite;
+}
 
 @-webkit-keyframes glowing {
   25% { background-color: #face49; box-shadow: 0 0 3px #face49; }

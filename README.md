@@ -8,6 +8,10 @@ The app can be found [here](https://shielded-plains-11002.herokuapp.com/).
 
 ## About the App
 
+
+![Screen Shot 2019-10-18 at 11 56 20 AM](https://user-images.githubusercontent.com/52713263/67109385-64378e00-f19e-11e9-94ac-a614b384e8ad.png)
+
+
 Name-It! is a full-stack app. Its front-end utilizes HTML, CSS, and the MD Bootstrap framework, and uses Handlebars for HTML templating. Its back-end is built with Node.js and Express.
 
 Users can select help in naming their baby, pet, car, or rubber ducky by following the app's simple button design. Each name is grabbed randomly from a mySQL database and displayed on the page for the user to see. The user can choose to favorite the name, or continue to the next random name.
@@ -32,7 +36,7 @@ To run this app locally, you will need to initialize a local database. Using an 
 
 <pre>
   CREATE DATABASE bopit_db;
-  USE burger_db;
+  USE bopit_db;
   </pre>
 
 Then create tables called "Babies", "Pets", "Boats", and "Duckies".
@@ -95,3 +99,16 @@ To run this app locally on your computer:
 ```node server.js```
 - Your app should be listening on your local host.
 
+### Dependencies
+ 
+ This app is dependent on 
+ <ul>
+    <li> <b>express</b> - a Node.js web application framework</li> (https://www.npmjs.com/package/express).</li>
+    <li><b>dotenv</b> - retrieves mySQL password from a .env file</li> (https://www.npmjs.com/package/express).</li>
+    <li><b>mySQL</b> - connects you to your database via the command line</li> (https://www.npmjs.com/package/express).</li>
+    <li><b>express-handlebars</b> - lets you use handlebars to create HTML templates</li> (https://www.npmjs.com/package/express-handlebars)</li>
+ </ul>
+
+ ### Code Quality
+
+ This program uses ESLint to encourage more consistent and readable
