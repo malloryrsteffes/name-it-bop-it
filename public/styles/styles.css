@@ -69,7 +69,7 @@ h3 {
   -o-animation: glowing 1500ms infinite;
   animation: glowing 1500ms infinite;
 }
-#babyButton {
+#duckyButton {
   -webkit-animation: yellowGlow 1500ms infinite;
   -moz-animation: yellowGlow 1500ms infinite;
   -o-animation: yellowGlow 1500ms infinite;
@@ -81,7 +81,7 @@ h3 {
   -o-animation: greenGlow 1500ms infinite;
   animation: greenGlow 1500ms infinite;
 }
-#duckyButton {
+#babyButton {
   -webkit-animation: blueGlow 1500ms infinite;
   -moz-animation: blueGlow 1500ms infinite;
   -o-animation: blueGlow 1500ms infinite;
@@ -139,6 +139,20 @@ h3 {
   -moz-animation: blueGlow 1500ms infinite;
   -o-animation: blueGlow 1500ms infinite;
   animation: blueGlow 1500ms infinite; 
+}
+#duckyRandomizerButton{
+  -webkit-animation: yellowGlow 1500ms infinite;
+  -moz-animation: yellowGlow 1500ms infinite;
+  -o-animation: yellowGlow 1500ms infinite;
+  animation: yellowGlow 1500ms infinite;
+
+}
+#boatRandomizerButton{
+  -webkit-animation: redGlow 1500ms infinite;
+  -moz-animation: redGlow 1500ms infinite;
+  -o-animation: redGlow 1500ms infinite;
+  animation: redGlow 1500ms infinite;
+  
 }
 
 
