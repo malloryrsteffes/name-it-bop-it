@@ -3,7 +3,43 @@
 
     <h1 class="animated bounce mb-4" id="randomBoy">Random Name Here</h1>
     <button class="button randomizerButtons" style="width: 160px" id="boyRandomizerButton">New</button>
-    <a href="/index"><button class="button" style="width: 160px" id="homeButton">Back</button></a>
+    <a href="/baby" class="fas fa-undo-alt back"></a>
 
+<div class="letterButtons"></div>
   </div>
 </div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    // Here we are provided an initial array of letters.
+    // Use this array to dynamically create buttons on the screen.
+    var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+    
+
+    // 1. Create a for-loop to iterate through the letters array.
+    for (var i = 0; i < letters.length; i++) {
+
+      // Inside the loop...
+
+      // 2. Create a variable named "letterBtn" equal to $("<button>");
+      var letterBtn = $("<button>");
+
+      // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
+      letterBtn.addClass("letter-button2 letter letter-button-color");
+
+      // 4. Then give each "letterBtn" a data-attribute called "data-letter".
+      letterBtn.attr("data-letter", letters[i]);
+
+      // 5. Then give each "letterBtns" a text equal to "letters[i]".
+      letterBtn.text(letters[i]);
+
+      // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
+      $(".letterButtons").append(letterBtn);
+    }
+    
+    });
+    
+</script>
