@@ -6,7 +6,6 @@ $(document).ready(function() {
     $.ajax("/api/pet", {
       method: "GET"
     }).then(function(data) {
-      console.log(data);
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -18,7 +17,6 @@ $(document).ready(function() {
     $.ajax("/api/ducky", {
       method: "GET"
     }).then(function(data) {
-      console.log(data);
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -31,7 +29,6 @@ $(document).ready(function() {
     $.ajax("/api/boat", {
       method: "GET"
     }).then(function(data) {
-      console.log(data);
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -41,11 +38,9 @@ $(document).ready(function() {
 
   // BOY BUTTON ==================================================
   $("#boyRandomizerButton").on("click", function() {
-    console.log("clicked!");
     $.ajax("/api/randomizes/boy", {
       method: "GET"
     }).then(function(data) {
-      console.log(data);
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -55,17 +50,13 @@ $(document).ready(function() {
 
   // BOY FIRST LETTER BUTTON ==================================================
   $("button").on("click", function() {
-    console.log("clicked!");
 
     var letterChosen = $(this).attr("data-letter");
-
-    console.log(letterChosen);
 
     $.ajax({
       url: "/api/boy/" + letterChosen,
       method: "GET"
     }).then(function(data) {
-      console.log(data);
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -75,11 +66,9 @@ $(document).ready(function() {
 
   // GIRL BUTTON ==================================================
   $("#girlRandomizerButton").on("click", function() {
-    console.log("clicked!");
     $.ajax("/api/randomizes/girl", {
       method: "GET"
     }).then(function(data) {
-      console.log(data);
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -91,11 +80,8 @@ $(document).ready(function() {
 
 
   $("button").on("click", function() {
-    console.log("clicked!");
 
     var letterChosen = $(this).attr("data-letter");
-
-    console.log(letterChosen);
 
     $.ajax({
       url: "/api/girl/" + letterChosen,
@@ -109,7 +95,8 @@ $(document).ready(function() {
   });
 });
 
-$(".create-form").on("submit", function(event) {
+// DUCKY MODAL
+$(".create-form").on("click", function(event) {
   // Make sure to preventDefault on a submit event.
   event.preventDefault();
 
@@ -117,7 +104,7 @@ $(".create-form").on("submit", function(event) {
     name: $("#newDucky").val().trim(),
   };
 
-  console.log(newDucky);
+  console.log("New Ducky:" + newDucky);
 
 
   // Send the POST request.
