@@ -71,10 +71,6 @@ $(document).ready(function() {
 
   // GIRL FIRST LETTER BUTTON ==================================================
 
-  // $('.testClass').on('click', function(){
-  //     alert( $(this).data('associateid') );
-  // });
-
   $("button").on("click", function() {
     console.log("clicked!");
 
