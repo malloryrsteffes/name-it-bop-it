@@ -33,9 +33,9 @@ module.exports = function(app) {
     res.render("boatRandomizer");
   });
 
-  // CAR PAGE ===================================================
-  app.get("/randomizes/car", function(req, res) {
-    res.render("carRandomizer");
+  // ducky PAGE ===================================================
+  app.get("/randomizes/ducky", function(req, res) {
+    res.render("duckyRandomizer");
   });
 
   // Render 404 page for any unmatched routes

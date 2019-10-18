@@ -9,13 +9,13 @@ $("#petRandomizerButton").on("click", function() {
     $("#randomPet").text(data);
   });
 });
-// CAR BUTTON ===================================================
-$("#carRandomizerButton").on("click", function() {
-  $.ajax("/api/car", {
+// DUCKY BUTTON ===================================================
+$("#duckyRandomizerButton").on("click", function() {
+  $.ajax("/api/ducky", {
     method: "GET"
   }).then(function(data) {
     console.log(data);
-    $("#randomCar").text(data);
+    $("#randomDucky").text(data);
   });
 });
 
