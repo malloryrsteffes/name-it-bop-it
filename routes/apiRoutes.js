@@ -20,7 +20,7 @@ module.exports = function(app) {
 
       console.log(letter);
 
-      // Function targets specific boy names by first letter and randomly selects one to send to cilent 
+      // Function targets specific boy names by first letter and randomly selects one to send to cilent
       function firstLetter() {
         for (i = 0; i < Baby.length; i++) {
           if (Baby[i].name.charAt(0) === letter && Baby[i].gender === "MALE") {
@@ -71,8 +71,6 @@ module.exports = function(app) {
 
       firstLetter();
 
-      // console.table(Baby[0].name);
-      // console.log(Baby[0].name);
     });
   });
 
@@ -101,7 +99,7 @@ module.exports = function(app) {
         }
       }
 
-      // Function targets random boy names 
+      // Function targets random boy names
       function boyRandomize() {
         var babyBoyNames = [];
 
@@ -147,7 +145,6 @@ module.exports = function(app) {
         res.json(Baby[picker])
       }
 
-      //randomizes();
       genderName();
     });
   });
@@ -207,7 +204,7 @@ module.exports = function(app) {
         var picker = Math.floor(Math.random() * Ducky.length) + 1;
 
         console.log(`\nLooking for ducky name`);
-        
+
         console.log(`\nHow do you like ${Ducky[picker].name}?\n`);
 
         res.json(Ducky[picker].name)
@@ -226,12 +223,4 @@ module.exports = function(app) {
   //   });
   // });
 
-  // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
-    db.Example.destroy({ where: { id: req.params.id } }).then(function(
-      dbExample
-    ) {
-      res.json(dbExample);
-    });
-  });
 };
