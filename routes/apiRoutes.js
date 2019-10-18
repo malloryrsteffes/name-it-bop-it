@@ -212,5 +212,15 @@ module.exports = function(app) {
     });
   });
 
-  // Delete an example by id
+  app.post("/add/ducky", function(req, res) {
+
+    db.Ducky.create(
+      {
+        name: req.body.name,
+      }
+      ).then(function(dbDucky) {
+      // We have access to the new Burger as an argument inside of the callback function
+      res.json(dbDucky);
+    });
+  });
 };

@@ -108,3 +108,27 @@ $(document).ready(function() {
     });
   });
 });
+
+$(".create-form").on("submit", function(event) {
+  // Make sure to preventDefault on a submit event.
+  event.preventDefault();
+
+  var newDucky = {
+    name: $("#newDucky").val().trim(),
+  };
+
+  console.log(newDucky);
+
+
+  // Send the POST request.
+  $.ajax("/add/ducky", {
+    type: "POST",
+    data: newDucky
+  }).then(
+    function() {
+      console.log("created ducky burger");
+      // Reload the page to get the updated list
+      location.reload();
+    }
+  );
+});
