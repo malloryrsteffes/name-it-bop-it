@@ -1,7 +1,11 @@
+-- MySQL Database ==========================================
+DROP DATABASE IF EXISTS bopit_db;
+
 CREATE DATABASE bopit_db;
 
 USE bopit_db;
 
+-- MySQL Tables ==========================================
 CREATE TABLE baby
 (
     id INT NOT NULL AUTO_INCREMENT,
