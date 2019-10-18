@@ -5,9 +5,11 @@
     <div class="mb-4" id="randomGirl">
       <h1 class="animated bounce">Random Girl Name</h1>
     </div>
-    <button class="button randomizerButtons" style="width: 160px" id="girlRandomizerButton">New</button>
+    <div>
+      <button class="button randomizerButtons" style="width: 350px" id="girlRandomizerButton">New</button>
+      <button class="button randomizerButtons" style="width: 350px" id="newGirlButton">Add a Name</button>
+    </div>
     <a href="/baby" class="fas fa-undo-alt back"></a>
-
 
     <div class="letterButtons"></div>
   </div>
@@ -24,8 +26,7 @@
     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
     // 1. Create a for-loop to iterate through the letters array.
-    for(var i = 0; i < letters.length; i++)
-    {
+    for (var i = 0; i < letters.length; i++) {
 
       // Inside the loop...
 
