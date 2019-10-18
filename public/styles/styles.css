@@ -1,6 +1,6 @@
 body{
   background-color: black;
-  font-family: 'Luckiest Guy', cursive;   
+  font-family: 'Luckiest Guy', cursive;
 }
 
 .jumbotron-fluid {
@@ -29,8 +29,8 @@ h3 {
 #letterM{
   color:#e71d2b;
   font-size: 140%;
-  
- 
+
+
 }
 #letterB{
   color:#00afe4;
@@ -38,7 +38,7 @@ h3 {
 }
 #letterP{
   color:#2ab243;
-  
+
 }
 #letterExclamationMark{
   color:#face49;
@@ -67,52 +67,52 @@ h3 {
   -webkit-animation: glowing 1500ms infinite;
   -moz-animation: glowing 1500ms infinite;
   -o-animation: glowing 1500ms infinite;
-  animation: glowing 1500ms infinite; 
+  animation: glowing 1500ms infinite;
 }
 #babyButton {
   -webkit-animation: yellowGlow 1500ms infinite;
   -moz-animation: yellowGlow 1500ms infinite;
   -o-animation: yellowGlow 1500ms infinite;
-  animation: yellowGlow 1500ms infinite; 
+  animation: yellowGlow 1500ms infinite;
 }
 #petButton {
   -webkit-animation: greenGlow 1500ms infinite;
   -moz-animation: greenGlow 1500ms infinite;
   -o-animation: greenGlow 1500ms infinite;
-  animation: greenGlow 1500ms infinite; 
+  animation: greenGlow 1500ms infinite;
 }
-#carButton {
+#duckyButton {
   -webkit-animation: blueGlow 1500ms infinite;
   -moz-animation: blueGlow 1500ms infinite;
   -o-animation: blueGlow 1500ms infinite;
-  animation: blueGlow 1500ms infinite; 
+  animation: blueGlow 1500ms infinite;
 }
 #boatButton {
   -webkit-animation: redGlow 1500ms infinite;
   -moz-animation: redGlow 1500ms infinite;
   -o-animation: redGlow 1500ms infinite;
-  animation: redGlow 1500ms infinite; 
+  animation: redGlow 1500ms infinite;
 }
 
 #girlButton {
   -webkit-animation: pinkGlow 1500ms infinite;
   -moz-animation: pinkGlow 1500ms infinite;
   -o-animation: pinkGlow 1500ms infinite;
-  animation: pinkGlow 1500ms infinite; 
+  animation: pinkGlow 1500ms infinite;
 }
 
 #boyButton {
   -webkit-animation: blueGlow 1500ms infinite;
   -moz-animation: blueGlow 1500ms infinite;
   -o-animation: blueGlow 1500ms infinite;
-  animation: blueGlow 1500ms infinite; 
+  animation: blueGlow 1500ms infinite;
 }
 
 #homeButton {
   -webkit-animation: redGlow 1500ms infinite;
   -moz-animation: redGlow 1500ms infinite;
   -o-animation: redGlow 1500ms infinite;
-  animation: redGlow 1500ms infinite; 
+  animation: redGlow 1500ms infinite;
 }
 
 .randomizerButtons {
@@ -165,22 +165,22 @@ h3 {
 @keyframes greenGlow {
   0% { background-color: #1be223; box-shadow: 0 0 3px #1be223; }
   50% { background-color: #2ab243; box-shadow: 0 0 40px #2ab243; }
-  100% { background-color: #1be223; box-shadow: 0 0 40px #1be223; } 
+  100% { background-color: #1be223; box-shadow: 0 0 40px #1be223; }
 }
 @keyframes blueGlow {
   0% { background-color: #00afe4; box-shadow: 0 0 3px #00afe4; }
   50% { background-color: #007bff; box-shadow: 0 0 40px #007bff }
-  100% { background-color: #00afe4; box-shadow: 0 0 40px #00afe4; } 
+  100% { background-color: #00afe4; box-shadow: 0 0 40px #00afe4; }
 }
 @keyframes redGlow {
   0% { background-color: #fe0000; box-shadow: 0 0 3px #fe0000; }
   50% { background-color: #8d0c15; box-shadow: 0 0 40px #8d0c15 }
-  100% { background-color: #fe0000; box-shadow: 0 0 40px #fe0000; } 
+  100% { background-color: #fe0000; box-shadow: 0 0 40px #fe0000; }
 }
 @keyframes pinkGlow {
   0% { background-color: #f171c8; box-shadow: 0 0 3px #f171c8; }
   50% { background-color: #ee29af; box-shadow: 0 0 40px #ee29af; }
-  100% { background-color: #f171c8; box-shadow: 0 0 40px #f171c8; } 
+  100% { background-color: #f171c8; box-shadow: 0 0 40px #f171c8; }
 }
 p.white-text{
   font-family: 'Open Sans', sans-serif;
@@ -214,14 +214,14 @@ p.white-text{
 	}
 }
 
-.avatar{ 
+.avatar{
   position: relative;
 
 }
 .titleBio{
   margin-top: 270px;
 }
-.bounce_Img {  
+.bounce_Img {
   left: 70px;
   top:0;
   position: absolute;
@@ -238,7 +238,7 @@ p.white-text{
   animation-iteration-count: infinite;
   -webkit-animation-iteration-count: infinite;
   color: white;
-  
+
 }
 span:hover {
   cursor: pointer;

@@ -156,7 +156,6 @@ module.exports = function(app) {
 
     db.Pet.findAll({})
     .then(function(Pet) {
-      console.log("looking for a pet name");
 
       function randomizes() {
 
@@ -177,7 +176,6 @@ module.exports = function(app) {
 
     db.Boat.findAll({})
     .then(function(Boat) {
-      console.log("looking for a boat name");
 
       function randomizes() {
 
@@ -194,22 +192,21 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/car", function(req, res) {
-    console.log("car route hit");
+  app.get("/api/ducky", function(req, res) {
+    console.log("ducky route hit");
 
 
-    db.Car.findAll({})
+    db.Ducky.findAll({})
 
-    .then(function(Car) {
-      console.log("looking for a car name");
+    .then(function(Ducky) {
 
       function randomizes() {
 
-        var picker = Math.floor(Math.random() * Car.length) + 1;
-        console.log(`\nLooking for car name`);
-        console.log(`\nHow do you like ${Car[picker].name}?\n`);
+        var picker = Math.floor(Math.random() * Ducky.length) + 1;
+        console.log(`\nLooking for ducky name`);
+        console.log(`\nHow do you like ${Ducky[picker].name}?\n`);
 
-        res.json(Car[picker].name)
+        res.json(Ducky[picker].name)
 
       }
 
