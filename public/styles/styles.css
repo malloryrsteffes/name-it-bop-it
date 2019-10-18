@@ -128,6 +128,18 @@ h3 {
   -o-animation: greenGlow 1500ms infinite;
   animation: greenGlow 1500ms infinite;
 }
+#girlRandomizerButton {
+  -webkit-animation: pinkGlow 1500ms infinite;
+  -moz-animation: pinkGlow 1500ms infinite;
+  -o-animation: pinkGlow 1500ms infinite;
+  animation: pinkGlow 1500ms infinite; 
+}
+#boyRandomizerButton {
+  -webkit-animation: blueGlow 1500ms infinite;
+  -moz-animation: blueGlow 1500ms infinite;
+  -o-animation: blueGlow 1500ms infinite;
+  animation: blueGlow 1500ms infinite; 
+}
 
 
 @-webkit-keyframes glowing {
@@ -257,10 +269,21 @@ span:hover {
 .letter-button:hover{
   transform: scale(2.5);
   color:white;
-  background-color: black;
-  
-  
-  
-  
-  
+  background-color: #dd37a7;
+}
+
+.back{
+  color:white;
+  font-size:60px;
+}
+.letter-button2:hover{
+  transform: scale(2.5);
+  color:white;
+  background-color: #00afe4;
+}
+
+.back2{
+  color:white;
+  font-size:60px;
+  margin-top:10px;
 }
