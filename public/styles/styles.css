@@ -245,3 +245,22 @@ span:hover {
   animation-name: bounce;
   -moz-animation-name: bounce;
 }
+.letterButtons{
+  
+  transition: transform .2s; 
+  padding-top: 5%;
+  font-size:30px;
+  
+
+  
+}
+.letter-button:hover{
+  transform: scale(2.5);
+  color:white;
+  background-color: black;
+  
+  
+  
+  
+  
+}
