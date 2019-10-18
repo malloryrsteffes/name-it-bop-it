@@ -1,3 +1,4 @@
+/* **********************Baby Names**************************** */
 INSERT INTO baby (birthYear, gender, origin, name, popularity)
 VALUES (2016, "female", "white", "Olivia", 1);
 INSERT INTO baby (birthYear, gender, origin, name, popularity)
@@ -51,7 +52,7 @@ VALUES (2016, "female", "white", "Olivia", 1);
 INSERT INTO baby (birthYear, gender, origin, name, popularity)
 VALUES (2016, "female", "white", "Olivia", 1);
 
--- ********************PET NAME************************** --
+-- ********************Pet Names************************** --
 INSERT INTO pet (name)
 VALUES ("Norman");
 INSERT INTO pet (name)
@@ -105,7 +106,7 @@ VALUES ("Stewart");
 INSERT INTO pet (name)
 VALUES ("Meeko");
 
-/* **********************boatss Names**************************** */
+/* **********************Boat Names**************************** */
 INSERT INTO boats (name) VALUES ('Tax Refund');
 INSERT INTO boats (name) VALUES ('Reely Expensive');
 INSERT INTO boats (name) VALUES ('A boats');
@@ -127,3 +128,56 @@ INSERT INTO boats (name) VALUES ('Tackle Me Elmo');
 INSERT INTO boats (name) VALUES ('Forced Family Fun');
 INSERT INTO boats (name) VALUES ('Rubber Ducky');
 
+/* **********************Rubber Ducky Names**************************** */
+INSERT INTO pet (name)
+VALUES ("Rocky Balbo");
+INSERT INTO pet (name)
+VALUES ("Scrooge McDuck");
+INSERT INTO pet (name)
+VALUES ("Donald");
+INSERT INTO pet (name)
+VALUES ("Ziggy");
+INSERT INTO pet (name)
+VALUES ("Milkshake");
+INSERT INTO pet (name)
+VALUES ("Nibbles");
+INSERT INTO pet (name)
+VALUES ("Numchuk");
+INSERT INTO pet (name)
+VALUES ("Wind-dee");
+INSERT INTO pet (name)
+VALUES ("Cuddles");
+INSERT INTO pet (name)
+VALUES ("Nugget");
+INSERT INTO pet (name)
+VALUES ("Cocoa");
+INSERT INTO pet (name)
+VALUES ("Butterscotch");
+INSERT INTO pet (name)
+VALUES ("Fluffer Bump");
+INSERT INTO pet (name)
+VALUES ("Rookie");
+INSERT INTO pet (name)
+VALUES ("Spots");
+INSERT INTO pet (name)
+VALUES ("Fink");
+INSERT INTO pet (name)
+VALUES ("Bubba Gupp");
+INSERT INTO pet (name)
+VALUES ("Bobo");
+INSERT INTO pet (name)
+VALUES ("Dexter Morgan");
+INSERT INTO pet (name)
+VALUES ("Mochi");
+INSERT INTO pet (name)
+VALUES ("Doogle");
+INSERT INTO pet (name)
+VALUES ("Smores");
+INSERT INTO pet (name)
+VALUES ("Cola");
+INSERT INTO pet (name)
+VALUES ("Mr. Snarks");
+INSERT INTO pet (name)
+VALUES ("Posieden");
+INSERT INTO pet (name)
+VALUES ("Swim Shady");
