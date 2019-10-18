@@ -93,29 +93,116 @@ $(document).ready(function() {
       $("#randomGirl").html(el);
     });
   });
-});
 
-// DUCKY MODAL
-$(".create-form").on("click", function(event) {
-  // Make sure to preventDefault on a submit event.
-  event.preventDefault();
+  // DUCKY MODAL
+  $(".create-form-ducky").on("click", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
 
-  var newDucky = {
-    name: $("#newDucky").val().trim(),
-  };
+    var newDucky = {
+      name: $("#newDucky").val().trim()
+    };
 
-  console.log("New Ducky:" + newDucky);
+    console.log(newDucky.name);
 
 
-  // Send the POST request.
-  $.ajax("/add/ducky", {
-    type: "POST",
-    data: newDucky
-  }).then(
-    function() {
-      console.log("created ducky burger");
-      // Reload the page to get the updated list
-      location.reload();
-    }
-  );
-});
+    // Send the POST request.
+    $.ajax("/add/ducky", {
+      type: "POST",
+      data: newDucky
+    }).then(
+      function(data) {
+
+        //data comes back from post as data.name
+        console.log("created ducky burger called " + data.name);
+        // Reload the page to get the updated list
+        //$("#randomDucky").html(data);
+
+      }
+      );
+    });
+
+    // PET MODAL
+    $(".create-form-pet").on("click", function(event) {
+      // Make sure to preventDefault on a submit event.
+      event.preventDefault();
+
+      var newPet = {
+        name: $("#newPet").val().trim()
+      };
+
+      console.log(newDucky.name);
+
+
+      // Send the POST request.
+      $.ajax("/add/pet", {
+        type: "POST",
+        data: newPet
+      }).then(
+        function(data) {
+
+          //data comes back from post as data.name
+          console.log("created pet burger called " + data.name);
+          // Reload the page to get the updated list
+          //$("#randomPet").html(data);
+        }
+        );
+      });
+
+      // DUCKY MODAL
+      $(".create-form-boy").on("click", function(event) {
+        // Make sure to preventDefault on a submit event.
+      event.preventDefault();
+
+      var newBoy = {
+        name: $("#newBoy").val().trim(),
+        gender: "MALE"
+      };
+
+      console.log(newBoy.name);
+
+
+      // Send the POST request.
+      $.ajax("/add/boy", {
+        type: "POST",
+        data: newBOY
+        }).then(
+        function(data) {
+
+          //data comes back from post as data.name
+          console.log("created boy name " + data.name);
+          // Reload the page to get the updated list
+        //$("#randomBoy").html(data);
+          }
+        );
+    });
+
+    // GIRL MODAL
+    $(".create-form-giel").on("click", function(event) {
+          // Make sure to preventDefault on a submit event.
+          event.preventDefault();
+
+          var newGirl = {
+        name: $("#newGirl").val().trim(),
+        gender: "FEMALE"
+      };
+
+      console.log(newGirl.name);
+
+
+      // Send the POST request.
+      $.ajax("/add/girl", {
+      type: "POST",
+      data: newGirl
+      }).then(
+      function(data) {
+
+        //data comes back from post as data.name
+        console.log("created girl name " + data.name);
+        // Reload the page to get the updated list
+        //$("#randomGirl").html(data);
+         }
+      );
+    });
+
+  });
