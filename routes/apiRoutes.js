@@ -5,8 +5,10 @@ module.exports = function(app) {
 
   // Select baby boy names by letter
   app.get("/api/boy/:letter", function(req, res) {
+
     // Queries baby boy names from baby table
     db.Baby.findAll({}).then(function(Baby) {
+
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -248,7 +250,6 @@ module.exports = function(app) {
       body: req.body.body,
       created_at: req.body.created_at
     }).then(function(Message) {
-      // `results` here would be the newly created chirp
       res.end();
     });
   });
