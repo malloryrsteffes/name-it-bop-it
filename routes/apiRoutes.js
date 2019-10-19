@@ -8,9 +8,6 @@ module.exports = function(app) {
     // Queries 12000 baby boy names from baby table
     db.Baby.findAll({
       limit: 12000
-      // where: {
-      //   name: req.params.name
-      // }
     }).then(function(Baby) {
       var letter = req.params.letter.toUpperCase();
 
@@ -256,7 +253,6 @@ module.exports = function(app) {
       body: req.body.body,
       created_at: req.body.created_at
     }).then(function(Message) {
-      // `results` here would be the newly created chirp
       res.end();
     });
   });
