@@ -106,7 +106,9 @@ $(document).ready(function() {
 
     // Prevent default ducky name from being created
     event.preventDefault();
-    $('#duckyModal').modal('toggle');
+    $('#duckyModal').modal("toggle");
+    $('#newDucky').val("");
+
     var newDucky = {
       name: $("#newDucky").val().trim()
     };
@@ -136,6 +138,7 @@ $(document).ready(function() {
 
       // Prevent default pet name from being created
       event.preventDefault();
+      $('#newPet').val("");
       $('#petModal').modal('toggle');
 
       var newPet = {
@@ -166,7 +169,8 @@ $(document).ready(function() {
 
       // Prevent default boy name from being created
       event.preventDefault();
-      $('#boyModal').modal('toggle');
+      $("#boyModal").modal("toggle");
+      $("#newBoy").val("");
 
       var newBoy = {
         name: $("#newBoy").val().trim(),
@@ -197,7 +201,8 @@ $(document).ready(function() {
 
            // Prevent default boy name from being created
           event.preventDefault();
-          $('#girlModal').modal('toggle');
+          $('#girlModal').modal("toggle");
+          $("#newGirl").val("");
 
           var newGirl = {
         name: $("#newGirl").val().trim(),
