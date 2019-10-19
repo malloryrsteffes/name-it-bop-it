@@ -1,27 +1,38 @@
 <div style="height: 100vh">
     <div class="flex-center flex-column">
         <div class="jumbotron-fluid">
-            <h2 class="text-center">Share your thougths with the Community</h2>
+            <h1 class="animated slideInLeft">Message Board</h1>
+            <h4 class="text-center white-text">Share your thoughts with the Community</h4>
         </div>
 
-        <div class="row">
-            <div class="">
-                <h2>Message Board</h2>
-                <hr>
-                <div id="chat-area"></div>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="">
-                <p class="cool-font">Name</p>
+        
+            <div class="row">
+                <div class="columnOne">
+        
+                <p class="white-text">Name</p>
                 <input class="form-control" type="text" id="author" placeholder="Enter Your Name">
                 <br>
-                <p class="cool-font">Message</p>
+                <p class="white-text">Message</p>
                 <textarea class="form-control" rows="3" id="chat-box" placeholder="Enter Your Comment Here!"></textarea>
-                <button id="message-submit" class="btn btn-lg pull-right">Submit!</button>
-            </div>
+                <button id="message-submit" class="button" style="width: 100px" value="submit">Submit!</button>
+               
+                <a href="/index"><button class="button" style="width: 100px" id="msgBack">Back</button></a>
+              </div>
+              
+              <div class="columnTwo">
+
+                    <div class="userComments">
+                    <hr>
+                    <div id="chat-area"></div>
+    
+              </div>
+            </div>   
+            
+
+
         </div>
-        <a href="/index"><button class="button" style="width: 160px" id="homeButton">Back</button></a>
+        
+        
     </div>
 </div>
