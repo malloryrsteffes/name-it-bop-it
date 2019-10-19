@@ -6,12 +6,7 @@ module.exports = function(app) {
   // Select baby boy names by letter
   app.get("/api/boy/:letter", function(req, res) {
     // Queries 12000 baby boy names from baby table
-    db.Baby.findAll({
-      limit: 12000
-      // where: {
-      //   name: req.params.name
-      // }
-    }).then(function(Baby) {
+    db.Baby.findAll({}).then(function(Baby) {
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -37,9 +32,7 @@ module.exports = function(app) {
   // Select baby girl names by letter
   app.get("/api/girl/:letter", function(req, res) {
     // Queries 12000 baby girl names from baby table
-    db.Baby.findAll({
-      limit: 12000
-    }).then(function(Baby) {
+    db.Baby.findAll({}).then(function(Baby) {
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -67,12 +60,7 @@ module.exports = function(app) {
   // Selects a random boy or girl name based on the route
   app.get("/api/randomizes/:gender", function(req, res) {
     // Queries 12000 baby names (based on route selected) from baby table
-    db.Baby.findAll({
-      limit: 12000
-      // where: {
-      //   name: req.params.name
-      // }
-    }).then(function(Baby) {
+    db.Baby.findAll({}).then(function(Baby) {
       // res.json(Baby);
 
       var gender = req.params.gender;
