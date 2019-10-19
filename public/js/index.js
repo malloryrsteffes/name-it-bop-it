@@ -222,4 +222,62 @@ $(document).ready(function() {
       );
     });
 
+    // MESSAGE BUTTON ==================================================
+
+    // When user clicks add-btn
+$("#message-submit").on("click", function(event) {
+  event.preventDefault();
+
+  // Make a newChat object
+  var newChat = {
+    author: $("#author").val().trim(),
+    body: $("#chat-box").val().trim(),
+    created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+  };
+
+  console.log(newChat);
+
+  // Send an AJAX POST-request with jQuery
+  $.post("/api/message", newChat)
+    // On success, run the following code
+    .then(function() {
+
+      var row = $("<div>");
+      row.addClass("chat");
+
+      row.append("<p>" + newChat.author + " commented: </p>");
+      row.append("<p>" + newChat.body + "</p>");
+      row.append("<p>At " + moment(newChat.created_at).format("h:mma on dddd") + "</p>");
+
+      $("#chat-area").prepend(row);
+
+    });
+
+  // Empty each input box by replacing the value with an empty string
+  $("#author").val("");
+  $("#chat-box").val("");
+});
+
+// When the page loads, grab all of our chirps
+$.get("/api/message", function(data) {
+
+  if (data.length !== 0) {
+
+    for (var i = 0; i < data.length; i++) {
+
+      var row = $("<div>");
+      row.addClass("chat");
+
+      row.append("<p>" + data[i].author + " commented.. </p>");
+      row.append("<p>" + data[i].body + "</p>");
+      row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
+
+      $("#chat-area").prepend(row);
+
+    }
+
+  }
+
+});
+
   });

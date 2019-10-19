@@ -38,6 +38,11 @@ module.exports = function(app) {
     res.render("duckyRandomizer");
   });
 
+  // MESSAGE PAGE ===================================================
+  app.get("/message", function(req, res) {
+    res.render("message");
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
