@@ -4,7 +4,7 @@ Built with MySQL, Node, Express, Handlebars and a Sequelize ORM.
 
 ## Live Project
 
-The app can be found [here](https://shielded-plains-11002.herokuapp.com/).
+The app can be found [here](https://polar-plateau-40591.herokuapp.com/).
 
 ## About the App
 
@@ -33,7 +33,8 @@ The API call is executed each time the specific pet randomizer button is clicked
 
 We also offer a few more options as far as customization for baby names. Users can select whether they are naming a boy or girl, and even select the letter they want their random name suggestions to start with.
 
-![Screen Shot 2019-10-19 at 9 12 53 AM](https://user-images.githubusercontent.com/52713263/67145586-ac16ed80-f250-11e9-8d0b-575534aed7b0.png)
+![Screen Shot 2019-10-19 at 5 53 15 PM](https://user-images.githubusercontent.com/52713263/67151827-63375700-f299-11e9-9237-b54df087c696.png)
+
 
 
 ### POST
@@ -47,6 +48,12 @@ We grab the user input from the modal, and send the new data to our database.
 
 ![Screen Shot 2019-10-19 at 9 20 58 AM](https://user-images.githubusercontent.com/52713263/67145732-d0bf9500-f251-11e9-9b47-9afd6c2b971b.png)
 
+
+## Message Board
+
+Our newest feature allows users to submit feedback into our message board. This board utilizes both a POST method to send the user's comment, and a GET method to display the chat board.
+
+![Screen Shot 2019-10-19 at 6 02 00 PM](https://user-images.githubusercontent.com/52713263/67151885-9201fd00-f29a-11e9-91e1-e32d4f427515.png)
 
 ## MVC Design Pattern
 Name-It! is an MVC app, which means it assigns objects in the application to one of the three listed roles (model, view, or controller), then defines the ways that the different parts of the application interact with each another. 
@@ -142,6 +149,7 @@ To run this app locally on your computer:
     <li><b>dotenv</b> - retrieves mySQL password from a .env file</li> (https://www.npmjs.com/package/express).</li>
     <li><b>mySQL</b> - connects you to your database via the command line</li> (https://www.npmjs.com/package/express).</li>
     <li><b>express-handlebars</b> - lets you use handlebars to create HTML templates</li> (https://www.npmjs.com/package/express-handlebars)</li>
+    <li><b>moment.js</b> - Parse, validate, manipulate, and display dates and times in JavaScript.</li> (https://www.npmjs.com/package/moment)</li>
  </ul>
 
  ### Code Quality

@@ -5,13 +5,10 @@ module.exports = function(app) {
 
   // Select baby boy names by letter
   app.get("/api/boy/:letter", function(req, res) {
-    // Queries 12000 baby boy names from baby table
-    db.Baby.findAll({
-      limit: 12000
-      // where: {
-      //   name: req.params.name
-      // }
-    }).then(function(Baby) {
+
+    // Queries baby boy names from baby table
+    db.Baby.findAll({}).then(function(Baby) {
+
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -36,10 +33,8 @@ module.exports = function(app) {
 
   // Select baby girl names by letter
   app.get("/api/girl/:letter", function(req, res) {
-    // Queries 12000 baby girl names from baby table
-    db.Baby.findAll({
-      limit: 12000
-    }).then(function(Baby) {
+    // Queries baby girl names from baby table
+    db.Baby.findAll({}).then(function(Baby) {
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -67,13 +62,7 @@ module.exports = function(app) {
   // Selects a random boy or girl name based on the route
   app.get("/api/randomizes/:gender", function(req, res) {
     // Queries 12000 baby names (based on route selected) from baby table
-    db.Baby.findAll({
-      limit: 12000
-      // where: {
-      //   name: req.params.name
-      // }
-    }).then(function(Baby) {
-      // res.json(Baby);
+    db.Baby.findAll({}).then(function(Baby) {
 
       var gender = req.params.gender;
 
@@ -183,6 +172,7 @@ module.exports = function(app) {
     });
   });
 
+  //Writes ducky name to the database
   app.post("/add/ducky", function(req, res) {
     console.log("post ducky " + req.body.name);
     db.Ducky.create({
@@ -192,6 +182,7 @@ module.exports = function(app) {
     });
   });
 
+  //Writes pet name to the database
   app.post("/add/pet", function(req, res) {
     console.log("post pet " + req.body.name);
 
@@ -202,6 +193,7 @@ module.exports = function(app) {
     });
   });
 
+  //Writes boat name to the database
   app.post("/add/boat", function(req, res) {
     console.log("post boat " + req.body.name);
 
@@ -212,6 +204,7 @@ module.exports = function(app) {
     });
   });
 
+  //Writes boy name to the database
   app.post("/add/boy", function(req, res) {
     console.log("post boy " + req.body.name + req.body.gender);
 
@@ -223,6 +216,7 @@ module.exports = function(app) {
     });
   });
 
+  //Writes girl name to the database
   app.post("/add/girl", function(req, res) {
     console.log("post girl " + req.body.name + req.body.gender);
 
@@ -258,6 +252,7 @@ module.exports = function(app) {
       body: req.body.body,
       createdAt: req.body.createdAt
     }).then(function(Message) {
+      
       // `results` here would be the newly created chirp
       res.json(Message);
     });
@@ -272,6 +267,7 @@ module.exports = function(app) {
       }
     }). then(function(Message) {
         res.json(Message)
+
     });
   });
 };
