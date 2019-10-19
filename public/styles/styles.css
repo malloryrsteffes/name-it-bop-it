@@ -6,6 +6,10 @@ body{
 .jumbotron-fluid {
   background-color: black;
 }
+.test{
+  font-family: 'Anton', sans-serif;
+}
+
 
 h1 {
   color:white;
