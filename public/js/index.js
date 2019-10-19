@@ -106,8 +106,8 @@ $(document).ready(function() {
 
     // Prevent default ducky name from being created
     event.preventDefault();
-    $('#duckyModal').modal("toggle");
-    $('#newDucky').val("");
+    $("#duckyModal").modal("toggle");
+    $("#newDucky").val("");
 
     var newDucky = {
       name: $("#newDucky").val().trim()
@@ -124,7 +124,7 @@ $(document).ready(function() {
       function(data) {
 
         // Data comes back from post as data.name
-        console.log("created ducky burger called " + data.name);
+        console.log("created ducky called " + data.name);
         // Reload the page to get the updated list
         //$("#randomDucky").html(data);
 
@@ -138,8 +138,8 @@ $(document).ready(function() {
 
       // Prevent default pet name from being created
       event.preventDefault();
-      $('#newPet').val("");
-      $('#petModal').modal('toggle');
+      $("#newPet").val("");
+      $("#petModal").modal('toggle');
 
       var newPet = {
         name: $("#newPet").val().trim()
@@ -230,7 +230,7 @@ $(document).ready(function() {
 
            // Prevent default boy name from being created
           event.preventDefault();
-          $('#girlModal').modal("toggle");
+          $("#girlModal").modal("toggle");
           $("#newGirl").val("");
 
           var newGirl = {
