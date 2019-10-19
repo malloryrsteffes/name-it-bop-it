@@ -240,9 +240,11 @@ module.exports = function(app) {
     // Sequelize queries are asynchronous, which helps with perceived speed.
     // If we want something to be guaranteed to happen after the query, we'll use
     // the .then function
-    db.Message.findAll({}).then(function(Message) {
+    db.Message.findAll({
+     
+    }).then(function(Message) {
       // results are available to us inside the .then
-      res.json(Message);
+      res.json(dbMessage);
     });
   });
 
@@ -254,10 +256,22 @@ module.exports = function(app) {
     db.Message.create({
       author: req.body.author,
       body: req.body.body,
-      created_at: req.body.created_at
+      createdAt: req.body.createdAt
     }).then(function(Message) {
       // `results` here would be the newly created chirp
-      res.end();
+      res.json(Message);
+    });
+  });
+
+  app.put("/api/message", function(req, res) {
+    db.Message.update({
+      body: req.body.body
+    }, {
+      where: {
+        id: req.body.id
+      }
+    }). then(function(Message) {
+        res.json(Message)
     });
   });
 };
