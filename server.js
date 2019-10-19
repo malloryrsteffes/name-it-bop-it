@@ -27,8 +27,7 @@ require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
 
-// If running a test, set syncOptions.force to true
-// clearing the `testdb`
+// syncOptions set to false to keep bopit_db from dropping the table data
 if (process.env.NODE_ENV === "test") {
   syncOptions.force = false;
 }
