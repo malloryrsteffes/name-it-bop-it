@@ -302,9 +302,10 @@ $.get("/api/message", function(data) {
       var row = $("<div>");
       row.addClass("chat");
 
+      row.append("<br>")
       row.append("<p>" + data[i].author + " commented.. </p>");
       row.append("<p>" + data[i].body + "</p>");
-      row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
+      row.append("<p>At " + moment(data[i].createdAt).format("h:mma on dddd") + "</p>");
 
       $("#chat-area").prepend(row);
 
