@@ -1,15 +1,36 @@
 <div style="height: 100vh">
   <div class="flex-center flex-column">
 
-
     <div class="mb-4" id="randomGirl">
       <h1 class="animated bounce">Random Girl Name</h1>
     </div>
     <div>
       <button class="button randomizerButtons" style="width: 350px" id="girlRandomizerButton">New</button>
-      <button class="button randomizerButtons" style="width: 350px" id="newGirlButton">Add a Name</button>
+      <button class="button randomizerButtons" style="width: 350px" id="newGirlButton" data-toggle="modal" data-target="#girlModal">Add a Name</button>
     </div>
     <a href="/baby" class="fas fa-undo-alt back"></a>
+
+    <!-- Modal -->
+    <div class="modal fade text-center" id="girlModal" tabindex="-1" role="dialog" aria-labelledby="girlModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="girlModalLabel">Add a new girl name</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- INPUT FOR FORM -->
+            <input type="text" id="newGirl" placeholder="New Name">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary create-form-girl">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="letterButtons"></div>
   </div>
@@ -26,7 +47,8 @@
     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
     // Create a for-loop to iterate through the letters array.
-    for (var i = 0; i < letters.length; i++) {
+    for(var i = 0; i < letters.length; i++)
+    {
 
       // Create a variable named "letterBtn" equal to $("<button>")
       var letterBtn = $("<button>");

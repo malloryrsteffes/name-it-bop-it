@@ -3,11 +3,33 @@
 
     <h1 class="animated bounce mb-4" id="randomPet">Random Pet Name</h1>
     <div>
-    <button class="button randomizerButtons" style="width: 350px" id="petRandomizerButton">New</button>
-    <button class="button randomizerButtons" style="width: 350px" id="newPetButton">Add a Name</button>
+      <button class="button randomizerButtons" style="width: 350px" id="petRandomizerButton">New</button>
+      <button class="button randomizerButtons" style="width: 350px" id="newPetButton" data-toggle="modal" data-target="#petModal">Add a Name</button>
 
     </div>
     <a href="/index" class="fas fa-undo-alt back"></a>
+
+    <!-- Modal -->
+    <div class="modal fade text-center" id="petModal" tabindex="-1" role="dialog" aria-labelledby="petModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="petModalLabel">Add a new pet name</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- INPUT FOR FORM -->
+            <input type="text" id="newPet" placeholder="New Name">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary create-form-pet">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>

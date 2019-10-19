@@ -141,7 +141,7 @@ $(document).ready(function() {
         name: $("#newPet").val().trim()
       };
 
-      console.log(newDucky.name);
+      console.log(newPet.name);
 
 
       // Send the POST request.
@@ -152,7 +152,7 @@ $(document).ready(function() {
         function(data) {
 
           // Data comes back from post as data.name
-          console.log("created pet burger called " + data.name);
+          console.log("created pet called " + data.name);
           // Reload the page to get the updated list
           //$("#randomPet").html(data);
         }
@@ -177,7 +177,7 @@ $(document).ready(function() {
       // Send the POST request.
       $.ajax("/add/boy", {
         type: "POST",
-        data: newBOY
+        data: newBoy
         }).then(
         function(data) {
 
@@ -191,7 +191,7 @@ $(document).ready(function() {
 
     // GIRL MODAL ==================================================
 
-    $(".create-form-giel").on("click", function(event) {
+    $(".create-form-girl").on("click", function(event) {
 
            // Prevent default boy name from being created
           event.preventDefault();

@@ -1,13 +1,35 @@
 <div style="height: 100vh">
   <div class="flex-center flex-column">
 
-    <h1 class="animated bounce mb-4" id="randomBoy">Random Name Here</h1>
+    <h1 class="animated bounce mb-4" id="randomBoy">Random Boy Here</h1>
     <div>
       <button class="button randomizerButtons" style="width: 350px" id="boyRandomizerButton">New</button>
-      <button class="button randomizerButtons" style="width: 350px" id="newBoyButton">Add a Name</button>
+      <button class="button randomizerButtons" style="width: 350px" id="newBoyButton" data-toggle="modal" data-target="#boyModal">Add a Name</button>
 
     </div>
     <a href="/baby" class="fas fa-undo-alt back"></a>
+
+    <!-- Modal -->
+    <div class="modal fade text-center" id="boyModal" tabindex="-1" role="dialog" aria-labelledby="boyModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="boyModalLabel">Add a new boy name</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- INPUT FOR FORM -->
+            <input type="text" id="newBoy" placeholder="New Name">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary create-form-boy">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="letterButtons"></div>
   </div>
