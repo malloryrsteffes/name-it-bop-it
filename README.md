@@ -16,6 +16,38 @@ Name-It! is a full-stack app. Its front-end utilizes HTML, CSS, and the MD Boots
 
 Users can select help in naming their baby, pet, car, or rubber ducky by following the app's simple button design. Each name is grabbed randomly from a mySQL database and displayed on the page for the user to see. The user can choose to favorite the name, or continue to the next random name.
 
+## The App in Action
+
+### GET
+This app uses the GET method to pull a randomly selected name from whichever table the user selects. 
+
+![Name-It!](https://user-images.githubusercontent.com/52713263/67145842-f6996980-f252-11e9-8360-d5e22b03713c.gif)
+
+Our API route is similar for each call - for example, if the user chooses that they want to name their pet, we find all pets in our pet database, then randomize which pet name is picked using the ```Randomizes()``` function. 
+
+![Randomizes Function](https://user-images.githubusercontent.com/52713263/67145433-af5da980-f24f-11e9-97d2-0aa45ca9786d.png)
+
+The API call is executed each time the specific pet randomizer button is clicked, and the random name is appended to the page.
+
+![Randomizer Button](https://user-images.githubusercontent.com/52713263/67145452-cbf9e180-f24f-11e9-8ef7-04062894bff9.png)
+
+We also offer a few more options as far as customization for baby names. Users can select whether they are naming a boy or girl, and even select the letter they want their random name suggestions to start with.
+
+![Screen Shot 2019-10-19 at 9 12 53 AM](https://user-images.githubusercontent.com/52713263/67145586-ac16ed80-f250-11e9-8d0b-575534aed7b0.png)
+
+
+### POST
+The app also uses the POST method to allow users to enter new names into the database. 
+
+![Name-It! (1)](https://user-images.githubusercontent.com/52713263/67145959-28f79680-f254-11e9-898a-458fad1131cb.gif)
+
+We grab the user input from the modal, and send the new data to our database.
+
+![Screen Shot 2019-10-19 at 9 40 02 AM](https://user-images.githubusercontent.com/52713263/67145997-7aa02100-f254-11e9-9400-c724b5ae5d68.png)
+
+![Screen Shot 2019-10-19 at 9 20 58 AM](https://user-images.githubusercontent.com/52713263/67145732-d0bf9500-f251-11e9-9b47-9afd6c2b971b.png)
+
+
 ## MVC Design Pattern
 Name-It! is an MVC app, which means it assigns objects in the application to one of the three listed roles (model, view, or controller), then defines the ways that the different parts of the application interact with each another. 
 - <b>The View:</b>
@@ -28,7 +60,6 @@ The Controller Object transfers data between the View and the Model. Any user in
 The Model Object is what manages the data. Data can be created or changed in the Model, and those changes are communicated to the View by the intermediary Controller. User input is sent to the Model from the View via the Controller.
 
 ## Installing the App
-
 
 
 ### Local Database 
@@ -44,9 +75,13 @@ Then create tables called "Babies", "Pets", "Boats", and "Duckies".
 <pre>
 CREATE TABLE Babies
   (
-    id int NOT NULL AUTO_INCREMENT,
-    burger_name varchar(255) NOT NULL,
-    devoured boolean NOT NULL,
+    id INT NOT NULL AUTO_INCREMENT,
+    birthYear VARCHAR(225) NOT NULL,
+    gender VARCHAR(225) NOT NULL,
+    origin VARCHAR(225) NOT NULL,
+    name VARCHAR(225) NOT NULL,
+    popularity INT(128),
+    value INT(128) NOT NULL,
     PRIMARY KEY (id)
   );
 
@@ -111,4 +146,11 @@ To run this app locally on your computer:
 
  ### Code Quality
 
- This program uses ESLint to encourage more consistent and readable
+ This program uses ESLint to encourage more consistent and readable code, and Travis CI for continuous integration.
+
+ ### Authors
+ * **Aaron Jackson - Back-End Design** - [Github](https://github.com/aarontjackson)/[LinkedIn](https://www.linkedin.com/in/aaron-jackson-481a2052/)
+ * **Allie Juarez - Front-End Design** - [Github](https://github.com/Aj518480)/[LinkedIn](https://www.linkedin.com/in/allison-juarez-6712a518b/)
+ * **Mallory Steffes - Project Manager** - [Github](https://github.com/malloryrsteffes)/[LinkedIn](https://www.linkedin.com/in/mallorysteffes/)
+ * **Sid Hicks - Back-End Design** - [Github](https://github.com/SidH80)/[LinkedIn](https://www.linkedin.com/in/senien-hicks-55415a1b/)
+
