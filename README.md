@@ -9,7 +9,7 @@ The app can be found [here](https://shielded-plains-11002.herokuapp.com/).
 ## About the App
 
 
-![Screen Shot 2019-10-18 at 11 56 20 AM](https://user-images.githubusercontent.com/52713263/67109385-64378e00-f19e-11e9-94ac-a614b384e8ad.png)
+![Screen Shot 2019-10-19 at 4 43 23 PM](https://user-images.githubusercontent.com/52713263/67151169-9ecd2380-f28f-11e9-9dad-87d5c498331f.png)
 
 
 Name-It! is a full-stack app. Its front-end utilizes HTML, CSS, and the MD Bootstrap framework, and uses Handlebars for HTML templating. Its back-end is built with Node.js and Express.
