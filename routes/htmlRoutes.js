@@ -33,7 +33,7 @@ module.exports = function(app) {
     res.render("boatRandomizer");
   });
 
-  // ducky PAGE ===================================================
+  // DUCKY PAGE ===================================================
   app.get("/randomizes/ducky", function(req, res) {
     res.render("duckyRandomizer");
   });

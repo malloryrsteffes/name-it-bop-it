@@ -52,7 +52,7 @@ VALUES (2016, "female", "white", "Olivia", 1);
 INSERT INTO baby (birthYear, gender, origin, name, popularity)
 VALUES (2016, "female", "white", "Olivia", 1);
 
--- ********************Pet Names************************** --
+/* ********************Pet Names************************** */
 INSERT INTO pet (name)
 VALUES ("Norman");
 INSERT INTO pet (name)

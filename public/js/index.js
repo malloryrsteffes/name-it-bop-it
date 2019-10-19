@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  // On click events for each randomizer button
+  // On click event delegations for each randomizer button
 
   // PET BUTTON ===================================================
+
   $("#petRandomizerButton").on("click", function() {
     $.ajax("/api/pet", {
       method: "GET"
@@ -12,7 +13,9 @@ $(document).ready(function() {
       $("#randomPet").html(el);
     });
   });
+
   // DUCKY BUTTON ===================================================
+
   $("#duckyRandomizerButton").on("click", function() {
     $.ajax("/api/ducky", {
       method: "GET"
@@ -25,6 +28,7 @@ $(document).ready(function() {
   });
 
   // BOAT BUTTON ===================================================
+
   $("#boatRandomizerButton").on("click", function() {
     $.ajax("/api/boat", {
       method: "GET"
@@ -37,6 +41,7 @@ $(document).ready(function() {
   });
 
   // BOY BUTTON ==================================================
+
   $("#boyRandomizerButton").on("click", function() {
     $.ajax("/api/randomizes/boy", {
       method: "GET"
@@ -49,6 +54,7 @@ $(document).ready(function() {
   });
 
   // BOY FIRST LETTER BUTTON ==================================================
+
   $("button").on("click", function() {
 
     var letterChosen = $(this).attr("data-letter");
@@ -65,6 +71,7 @@ $(document).ready(function() {
   });
 
   // GIRL BUTTON ==================================================
+
   $("#girlRandomizerButton").on("click", function() {
     $.ajax("/api/randomizes/girl", {
       method: "GET"
@@ -77,7 +84,6 @@ $(document).ready(function() {
   });
 
   // GIRL FIRST LETTER BUTTON ==================================================
-
 
   $("button").on("click", function() {
 
@@ -94,9 +100,11 @@ $(document).ready(function() {
     });
   });
 
-  // DUCKY MODAL
+  // DUCKY MODAL ==================================================
+
   $(".create-form-ducky").on("click", function(event) {
-    // Make sure to preventDefault on a submit event.
+
+    // Prevent default ducky name from being created
     event.preventDefault();
 
     var newDucky = {
@@ -106,14 +114,14 @@ $(document).ready(function() {
     console.log(newDucky.name);
 
 
-    // Send the POST request.
+    // Send the POST request
     $.ajax("/add/ducky", {
       type: "POST",
       data: newDucky
     }).then(
       function(data) {
 
-        //data comes back from post as data.name
+        // Data comes back from post as data.name
         console.log("created ducky burger called " + data.name);
         // Reload the page to get the updated list
         //$("#randomDucky").html(data);
@@ -122,9 +130,11 @@ $(document).ready(function() {
       );
     });
 
-    // PET MODAL
+    // PET MODAL ==================================================
+
     $(".create-form-pet").on("click", function(event) {
-      // Make sure to preventDefault on a submit event.
+
+      // Prevent default pet name from being created
       event.preventDefault();
 
       var newPet = {
@@ -141,7 +151,7 @@ $(document).ready(function() {
       }).then(
         function(data) {
 
-          //data comes back from post as data.name
+          // Data comes back from post as data.name
           console.log("created pet burger called " + data.name);
           // Reload the page to get the updated list
           //$("#randomPet").html(data);
@@ -149,9 +159,11 @@ $(document).ready(function() {
         );
       });
 
-      // DUCKY MODAL
+      // BOY MODAL ==================================================
+
       $(".create-form-boy").on("click", function(event) {
-        // Make sure to preventDefault on a submit event.
+
+      // Prevent default boy name from being created
       event.preventDefault();
 
       var newBoy = {
@@ -169,7 +181,7 @@ $(document).ready(function() {
         }).then(
         function(data) {
 
-          //data comes back from post as data.name
+          // Data comes back from post as data.name
           console.log("created boy name " + data.name);
           // Reload the page to get the updated list
         //$("#randomBoy").html(data);
@@ -177,9 +189,11 @@ $(document).ready(function() {
         );
     });
 
-    // GIRL MODAL
+    // GIRL MODAL ==================================================
+
     $(".create-form-giel").on("click", function(event) {
-          // Make sure to preventDefault on a submit event.
+
+           // Prevent default boy name from being created
           event.preventDefault();
 
           var newGirl = {
@@ -197,7 +211,7 @@ $(document).ready(function() {
       }).then(
       function(data) {
 
-        //data comes back from post as data.name
+        // Data comes back from post as data.name
         console.log("created girl name " + data.name);
         // Reload the page to get the updated list
         //$("#randomGirl").html(data);

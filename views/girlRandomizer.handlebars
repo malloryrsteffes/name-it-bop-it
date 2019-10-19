@@ -21,28 +21,26 @@
 
   $(document).ready(function () {
 
-    // Here we are provided an initial array of letters.
-    // Use this array to dynamically create buttons on the screen.
+    // Initial array of letters.
+    // This array to dynamically create buttons on the screen
     var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
-    // 1. Create a for-loop to iterate through the letters array.
+    // Create a for-loop to iterate through the letters array.
     for (var i = 0; i < letters.length; i++) {
 
-      // Inside the loop...
-
-      // 2. Create a variable named "letterBtn" equal to $("<button>");
+      // Create a variable named "letterBtn" equal to $("<button>")
       var letterBtn = $("<button>");
 
-      // 3. Then give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color".
+      // Give each "letterBtn" the following classes: "letter-button" "letter" "letter-button-color"
       letterBtn.addClass("letter-button letter letter-button-color");
 
-      // 4. Then give each "letterBtn" a data-attribute called "data-letter".
+      // Give each "letterBtn" a data-attribute called "data-letter"
       letterBtn.attr("data-letter", letters[i]);
 
-      // 5. Then give each "letterBtns" a text equal to "letters[i]".
+      // Give each "letterBtns" a text equal to "letters[i]"
       letterBtn.text(letters[i]);
 
-      // 6. Finally, append each "letterBtn" to the "#buttons" div (provided).
+      // Append each "letterBtn" to the "#buttons" div (provided)
       $(".letterButtons").append(letterBtn);
     }
 

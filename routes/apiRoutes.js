@@ -1,25 +1,31 @@
 var db = require("../models");
 
-module.exports = function(app) {
-  // Get all examples
-  app.get("/api/boy/:letter", function(req, res) {
+module.exports = function (app) {
+  // BABY NAME ROUTES ==========================================
+
+  // Select baby boy names by letter
+  app.get("/api/boy/:letter", function (req, res) {
+
+    // Queries 7,000 baby boy names from baby table
     db.Baby.findAll({
       limit: 7000
       // where: {
       //   name: req.params.name
       // }
-    }).then(function(Baby) {
+    }).then(function (Baby) {
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
 
-      //function targets a specific name with the letter beginning with a
+      // Function: Targets specific baby boy names by the first letter
       function firstLetter() {
         for (i = 0; i < Baby.length; i++) {
           if (Baby[i].name.charAt(0) === letter && Baby[i].gender === "MALE") {
             targetedNames.push(Baby[i].name);
           }
         }
+
+        // Randomly picks boy names based on first letter selected to send to the cilent
         var picker = Math.floor(Math.random() * targetedNames.length) + 1;
 
         res.json(targetedNames[picker]);
@@ -29,15 +35,18 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/girl/:letter", function(req, res) {
+  // Select baby girl names by letter
+  app.get("/api/girl/:letter", function (req, res) {
+
+    // Queries 7,000 baby girl names from baby table
     db.Baby.findAll({
       limit: 7000
-    }).then(function(Baby) {
+    }).then(function (Baby) {
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
 
-      //function targets a specific name with the letter beginning with a
+      // Function: Targets specific baby girl names by the first letter
       function firstLetter() {
         for (i = 0; i < Baby.length; i++) {
           if (
@@ -47,6 +56,8 @@ module.exports = function(app) {
             targetedNames.push(Baby[i].name);
           }
         }
+
+        // Randomly picks girl names (based on first letter selected) to send to the cilent
         var picker = Math.floor(Math.random() * targetedNames.length) + 1;
         res.json(targetedNames[picker]);
       }
@@ -55,19 +66,21 @@ module.exports = function(app) {
     });
   });
 
-  //randomizer grabs a random boy or girl name based on the route
-  app.get("/api/randomizes/:gender", function(req, res) {
+   // Selects a random boy or girl name based on the route
+  app.get("/api/randomizes/:gender", function (req, res) {
+
+    // Queries 7,000 baby names (based on route selected) from baby table
     db.Baby.findAll({
       limit: 7000
       // where: {
       //   name: req.params.name
       // }
-    }).then(function(Baby) {
+    }).then(function (Baby) {
       // res.json(Baby);
 
       var gender = req.params.gender;
 
-      //Function sets a conditional when user chooses between a boy and a girl
+      // Function: Sets a conditional when user chooses between a boy and a girl
       function genderName() {
         if (gender === "boy") {
           boyRandomize();
@@ -78,6 +91,7 @@ module.exports = function(app) {
         }
       }
 
+      // Function: Randomly selects baby boy names from baby table
       function boyRandomize() {
         var babyBoyNames = [];
 
@@ -87,11 +101,13 @@ module.exports = function(app) {
           }
         }
 
+        // Randomly picks one baby boy name to send to the cilent
         var picker = Math.floor(Math.random() * babyBoyNames.length) + 1;
 
         res.json(babyBoyNames[picker]);
       }
 
+      // Function: Randomly selects baby girl names from baby table
       function girlRandomize() {
         var babyGirlNames = [];
 
@@ -101,13 +117,16 @@ module.exports = function(app) {
           }
         }
 
+        // Randomly picks baby girl names to send to the cilent
         var picker = Math.floor(Math.random() * babyGirlNames.length) + 1;
 
         res.json(babyGirlNames[picker]);
       }
 
-      //function targets a specific name with the letter beginning with a
+      // Function: Targets specific baby names (based on route selected) by the first letter
       function randomizes() {
+
+        // Randomly picks baby names (based on route selected) to send to the cilent
         var picker = Math.floor(Math.random() * Baby.length) + 1;
 
         res.json(Baby[picker]);
@@ -118,10 +137,16 @@ module.exports = function(app) {
     });
   });
 
-  //delivers random pet name
-  app.get("/api/pet", function(req, res) {
-    db.Pet.findAll({}).then(function(Pet) {
+  // PET NAME ROUTES ==========================================
+
+  // Select random pet name
+  app.get("/api/pet", function (req, res) {
+
+    // Queries all pet names from pet table
+    db.Pet.findAll({}).then(function (Pet) {
       function randomizes() {
+
+         // Randomly picks pet names to send to the cilent
         var picker = Math.floor(Math.random() * Pet.length) + 1;
 
         res.json(Pet[picker].name);
@@ -131,10 +156,16 @@ module.exports = function(app) {
     });
   });
 
-  //delivers a random boat name
-  app.get("/api/boat", function(req, res) {
-    db.Boat.findAll({}).then(function(Boat) {
+   // BOAT NAME ROUTES ==========================================
+
+  // Selects random boat name
+  app.get("/api/boat", function (req, res) {
+
+    // Queries all boat names
+    db.Boat.findAll({}).then(function (Boat) {
       function randomizes() {
+
+        // Randomly picks boat names to send to the cilent
         var picker = Math.floor(Math.random() * Boat.length) + 1;
 
         res.json(Boat[picker].name);
@@ -144,9 +175,16 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/ducky", function(req, res) {
-    db.Ducky.findAll({}).then(function(Ducky) {
+  // RUBBER DUCKY NAME ROUTES ==========================================
+
+  // Selects rubber ducky name
+  app.get("/api/ducky", function (req, res) {
+
+    // Queries all rubber ducky names
+    db.Ducky.findAll({}).then(function (Ducky) {
       function randomizes() {
+
+        // Randomly picks rubber ducky names to send to the cilent
         var picker = Math.floor(Math.random() * Ducky.length) + 1;
 
         res.json(Ducky[picker].name);
@@ -155,44 +193,44 @@ module.exports = function(app) {
     });
   });
 
-  app.post("/add/ducky", function(req, res) {
+  app.post("/add/ducky", function (req, res) {
     console.log("post ducky " + req.body.name);
 
     db.Ducky.create({
       name: req.body.name
-    }).then(function(dbDucky) {
+    }).then(function (dbDucky) {
       res.json(dbDucky);
     });
   });
 
-  app.post("/add/pet", function(req, res) {
+  app.post("/add/pet", function (req, res) {
     console.log("post pet " + req.body.name);
 
     db.Pet.create({
       name: req.body.name
-    }).then(function(dbPet) {
+    }).then(function (dbPet) {
       res.json(dbPet);
     });
   });
 
-  app.post("/add/boy", function(req, res) {
+  app.post("/add/boy", function (req, res) {
     console.log("post boy " + req.body.name + req.body.gender);
 
     db.Baby.create({
       name: req.body.name,
       gender: req.body.gender
-    }).then(function(dbBaby) {
+    }).then(function (dbBaby) {
       res.json(dbBaby);
     });
   });
 
-  app.post("/add/girl", function(req, res) {
+  app.post("/add/girl", function (req, res) {
     console.log("post girl " + req.body.name + req.body.gender);
 
     db.Baby.create({
       name: req.body.name,
       gender: req.body.gender
-    }).then(function(dbBaby) {
+    }).then(function (dbBaby) {
       res.json(dbBaby);
     });
   });
