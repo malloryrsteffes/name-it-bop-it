@@ -223,4 +223,35 @@ module.exports = function(app) {
       res.json(dbBaby);
     });
   });
+
+  // Get all messages
+  app.get("/api/message", function(req, res) {
+
+    // Finding all messages, and then returning them to the user as JSON.
+    // Sequelize queries are asynchronous, which helps with perceived speed.
+    // If we want something to be guaranteed to happen after the query, we'll use
+    // the .then function
+    db.Message.findAll({}).then(function(Message) {
+      // results are available to us inside the .then
+      res.json(Message);
+    });
+
+  });
+
+  // Add a message
+  app.post("/api/message", function(req, res) {
+
+    console.log("Message Data:");
+    console.log(req.body);
+
+    db.Message.create({
+      author: req.body.author,
+      body: req.body.body,
+      created_at: req.body.created_at
+    }).then(function(Message) {
+      // `results` here would be the newly created chirp
+      res.end();
+    });
+
+  });
 };
