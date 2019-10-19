@@ -160,6 +160,35 @@ $(document).ready(function() {
         );
       });
 
+      // BOAT MODAL ==================================================
+
+    $(".create-form-boat").on("click", function(event) {
+
+      // Prevent default boat name from being created
+      event.preventDefault();
+      $('#boatModal').modal('toggle');
+
+      var newBoat = {
+        name: $("#newBoat").val().trim()
+      };
+
+      console.log(newBoat.name);
+
+
+      // Send the POST request.
+      $.ajax("/add/boat", {
+        type: "POST",
+        data: newBoat
+      }).then(
+        function(data) {
+
+          // Data comes back from post as data.name
+          console.log("created boat called " + data.name);
+
+          }
+        );
+      });
+
       // BOY MODAL ==================================================
 
       $(".create-form-boy").on("click", function(event) {
