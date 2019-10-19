@@ -185,7 +185,6 @@ module.exports = function(app) {
 
   app.post("/add/ducky", function(req, res) {
     console.log("post ducky " + req.body.name);
-
     db.Ducky.create({
       name: req.body.name
     }).then(function(dbDucky) {
