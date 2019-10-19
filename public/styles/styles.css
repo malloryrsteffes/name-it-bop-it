@@ -1,4 +1,4 @@
-body{
+body {
   background-color: black;
   font-family: 'Luckiest Guy', cursive;
 }
@@ -6,10 +6,10 @@ body{
 .jumbotron-fluid {
   background-color: black;
 }
-.test{
+
+.test {
   font-family: 'Anton', sans-serif;
 }
-
 
 h1 {
   color:white;
@@ -23,28 +23,27 @@ h3 {
   text-align: center;
 }
 
-
-
-
-#letterN{
+#letterN {
   color:#face49;
   font-size:150%;
 }
-#letterM{
+
+#letterM {
   color:#e71d2b;
   font-size: 140%;
-
-
 }
-#letterI{
+
+#letterI {
   color:#00afe4;
   font-size:150%;
 }
-#letterT{
+
+#letterT {
   color:#2ab243;
 
 }
-#letterExclamationMark{
+
+#letterExclamationMark {
   color:#face49;
   font-size:120%;
 }
@@ -53,6 +52,8 @@ h3 {
   color: white;
   text-align: center;
 }
+
+/* BUTTON STYLING */
 
 .button {
   margin-top: 5%;
@@ -73,24 +74,28 @@ h3 {
   -o-animation: glowing 1500ms infinite;
   animation: glowing 1500ms infinite;
 }
+
 #duckyButton {
   -webkit-animation: yellowGlow 1500ms infinite;
   -moz-animation: yellowGlow 1500ms infinite;
   -o-animation: yellowGlow 1500ms infinite;
   animation: yellowGlow 1500ms infinite;
 }
+
 #petButton {
   -webkit-animation: greenGlow 1500ms infinite;
   -moz-animation: greenGlow 1500ms infinite;
   -o-animation: greenGlow 1500ms infinite;
   animation: greenGlow 1500ms infinite;
 }
+
 #babyButton {
   -webkit-animation: blueGlow 1500ms infinite;
   -moz-animation: blueGlow 1500ms infinite;
   -o-animation: blueGlow 1500ms infinite;
   animation: blueGlow 1500ms infinite;
 }
+
 #boatButton {
   -webkit-animation: redGlow 1500ms infinite;
   -moz-animation: redGlow 1500ms infinite;
@@ -132,32 +137,35 @@ h3 {
   -o-animation: greenGlow 1500ms infinite;
   animation: greenGlow 1500ms infinite;
 }
+
 #girlRandomizerButton {
   -webkit-animation: pinkGlow 1500ms infinite;
   -moz-animation: pinkGlow 1500ms infinite;
   -o-animation: pinkGlow 1500ms infinite;
   animation: pinkGlow 1500ms infinite; 
 }
+
 #boyRandomizerButton {
   -webkit-animation: blueGlow 1500ms infinite;
   -moz-animation: blueGlow 1500ms infinite;
   -o-animation: blueGlow 1500ms infinite;
   animation: blueGlow 1500ms infinite; 
 }
+
 #duckyRandomizerButton{
   -webkit-animation: yellowGlow 1500ms infinite;
   -moz-animation: yellowGlow 1500ms infinite;
   -o-animation: yellowGlow 1500ms infinite;
   animation: yellowGlow 1500ms infinite;
-
 }
+
 #boatRandomizerButton{
   -webkit-animation: redGlow 1500ms infinite;
   -moz-animation: redGlow 1500ms infinite;
   -o-animation: redGlow 1500ms infinite;
-  animation: redGlow 1500ms infinite;
-  
+  animation: redGlow 1500ms infinite;  
 }
+
 #petRandomizerButton {
   -webkit-animation: yellowGlow 1500ms infinite;
   -moz-animation: yellowGlow 1500ms infinite;
@@ -217,15 +225,15 @@ h3 {
   50% { background-color: #ee29af; box-shadow: 0 0 40px #ee29af; }
   100% { background-color: #f171c8; box-shadow: 0 0 40px #f171c8; }
 }
-p.white-text{
+p.white-text {
   font-family: 'Open Sans', sans-serif;
 }
 
-#wrapper{
+#wrapper {
   text-align:center;
 }
 
-.button{
+.button {
   margin:30px;
   width:320px;
 }
@@ -249,11 +257,11 @@ p.white-text{
 	}
 }
 
-.avatar{
+.avatar {
   position: relative;
 
 }
-.titleBio{
+.titleBio {
   margin-top: 270px;
 }
 .bounce_Img {
@@ -275,37 +283,37 @@ p.white-text{
   color: white;
 
 }
+
 span:hover {
   cursor: pointer;
   animation-name: bounce;
   -moz-animation-name: bounce;
 }
-.letterButtons{
-  
+
+.letterButtons{  
   transition: transform .2s; 
   padding-top: 5%;
-  font-size:30px;
-  
-
-  
+  font-size:30px; 
 }
-.letter-button:hover{
+
+.letter-button:hover {
   transform: scale(2.5);
   color:white;
   background-color: #dd37a7;
 }
 
-.back{
+.back {
   color:white;
   font-size:60px;
 }
-.letter-button2:hover{
+
+.letter-button2:hover {
   transform: scale(2.5);
   color:white;
   background-color: #00afe4;
 }
 
-.back2{
+.back2 {
   color:white;
   font-size:60px;
   margin-top:10px;

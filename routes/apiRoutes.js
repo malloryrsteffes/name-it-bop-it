@@ -226,7 +226,6 @@ module.exports = function(app) {
 
   // Get all messages
   app.get("/api/message", function(req, res) {
-
     // Finding all messages, and then returning them to the user as JSON.
     // Sequelize queries are asynchronous, which helps with perceived speed.
     // If we want something to be guaranteed to happen after the query, we'll use
@@ -235,12 +234,10 @@ module.exports = function(app) {
       // results are available to us inside the .then
       res.json(Message);
     });
-
   });
 
   // Add a message
   app.post("/api/message", function(req, res) {
-
     console.log("Message Data:");
     console.log(req.body);
 
@@ -252,6 +249,5 @@ module.exports = function(app) {
       // `results` here would be the newly created chirp
       res.end();
     });
-
   });
 };
