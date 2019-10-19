@@ -55,7 +55,7 @@ $(document).ready(function() {
 
   // BOY FIRST LETTER BUTTON ==================================================
 
-  $("button").on("click", function() {
+  $(".letter-button2").on("click", function() {
 
     var letterChosen = $(this).attr("data-letter");
 
@@ -85,7 +85,7 @@ $(document).ready(function() {
 
   // GIRL FIRST LETTER BUTTON ==================================================
 
-  $("button").on("click", function() {
+  $(".letter-button").on("click", function() {
 
     var letterChosen = $(this).attr("data-letter");
 
