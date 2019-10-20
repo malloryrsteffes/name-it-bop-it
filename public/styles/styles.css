@@ -378,25 +378,43 @@ span:hover {
 }
 
 /* MEDIA QUERIES */
+
+
 @media screen and (max-width: 768px) {
-  /* The body's bg color will be #333 */
   .landingPageButtons {
     text-align: center
   }
-  /* The wrapper's width will be 600px */
-  .wrapper {
-    width: 600px;
-  }
-
+  
   .flex-center {
     margin-top: 100px;
   }
+  
+  .columnOne {
+    margin: 0 auto;
+    padding-left: 0px;
+  }
+
+  .columnTwo {
+    margin: 0 auto;
+  }
+
+  .row {
+    margin: 0 auto;
+  }
+  #messageBoardTitle {
+    font-size: 80px;
+    padding-right: 45px;
+  }
+
 }
 
 @media screen and (max-width: 480px) {
   #home{
     margin-top: 25px;
     padding-bottom: 50px;
+  }
+  #startParagraph {
+    width: 80%;
   }
   .flex-center {
     margin-top: 0px;
@@ -427,7 +445,7 @@ span:hover {
   }
 
   #messagePage {
-    margin-top: 200px;
+    margin-top: 100px;
   }
 
   .columnOne {
@@ -438,6 +456,7 @@ span:hover {
   .columnTwo {
     padding: 0px;
     margin: 0 auto;
+    width: 80%;
   }
 
   h1 {
