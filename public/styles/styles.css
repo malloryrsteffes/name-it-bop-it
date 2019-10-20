@@ -7,7 +7,7 @@ body {
   background-color: black;
 }
 
-.test {
+.nameYour {
   font-family: 'Anton', sans-serif;
 }
 
@@ -123,6 +123,12 @@ h3 {
   -o-animation: redGlow 1500ms infinite;
   animation: redGlow 1500ms infinite;
 }
+#messageButton{
+  -webkit-animation: blueGlow 1500ms infinite;
+  -moz-animation: blueGlow 1500ms infinite;
+  -o-animation: blueGlow 1500ms infinite;
+  animation: blueGlow 1500ms infinite; 
+}
 
 .randomizerButtons {
   -webkit-animation: greenGlow 1500ms infinite;
@@ -172,6 +178,21 @@ h3 {
   -o-animation: yellowGlow 1500ms infinite;
   animation: yellowGlow 1500ms infinite;
 }
+#message-submit{
+  -webkit-animation: greenGlow 1500ms infinite;
+  -moz-animation: greenGlow 1500ms infinite;
+  -o-animation: greenGlow 1500ms infinite;
+  animation: greenGlow 1500ms infinite;
+}
+#msgBack{
+  -webkit-animation: redGlow 1500ms infinite;
+  -moz-animation: redGlow 1500ms infinite;
+  -o-animation: redGlow 1500ms infinite;
+  animation: redGlow 1500ms infinite;
+
+}
+
+
 
 @-webkit-keyframes glowing {
   25% { background-color: #face49; box-shadow: 0 0 3px #face49; }
@@ -317,4 +338,37 @@ span:hover {
   color:white;
   font-size:60px;
   margin-top:10px;
+}
+.userComments{
+  color:white;
+}
+#chat-area{
+  overflow: scroll;
+  font-family:'Raleway', sans-serif;
+  font-size:20px;
+  width:400px;
+  height:225px;
+  overflow-x: hidden;
+ 
+}
+
+#message-submit{
+  font-size:20px;
+}
+#msgBack{
+  font-size:20px;
+}
+.columnOne{
+  padding:50px;
+  margin:50px;
+  margin-top:80px;
+}
+.columnTwo{
+  padding:50px;
+  margin:50px;
+  font-size:30px;
+}
+
+.notFound{
+  background-color: black;
 }

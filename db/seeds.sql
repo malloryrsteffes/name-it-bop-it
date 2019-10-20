@@ -107,26 +107,26 @@ INSERT INTO pet (name)
 VALUES ("Meeko");
 
 /* **********************Boat Names**************************** */
-INSERT INTO boats (name) VALUES ('Tax Refund');
-INSERT INTO boats (name) VALUES ('Reely Expensive');
-INSERT INTO boats (name) VALUES ('A boats');
-INSERT INTO boats (name) VALUES ('Stinky Anchovy');
-INSERT INTO boats (name) VALUES ('Wife #4');
-INSERT INTO boats (name) VALUES ('Poseidon Probe');
-INSERT INTO boats (name) VALUES ('Sea Señor');
-INSERT INTO boats (name) VALUES ('Heavy Wetter');
-INSERT INTO boats (name) VALUES ('Jamaican Me Sail');
-INSERT INTO boats (name) VALUES ('Get Shipfaced');
-INSERT INTO boats (name) VALUES ('Spare-a-Beer?');
-INSERT INTO boats (name) VALUES ('Coral Reefer');
-INSERT INTO boats (name) VALUES ('Mother Rudder');
-INSERT INTO boats (name) VALUES ('Nacho boats');
-INSERT INTO boats (name) VALUES ('The Other Woman');
-INSERT INTO boats (name) VALUES ('Poop Deck');
-INSERT INTO boats (name) VALUES ('Fish Magnet');
-INSERT INTO boats (name) VALUES ('Tackle Me Elmo');
-INSERT INTO boats (name) VALUES ('Forced Family Fun');
-INSERT INTO boats (name) VALUES ('Rubber Ducky');
+INSERT INTO Boats (name) VALUES ('Tax Refund');
+INSERT INTO Boats (name) VALUES ('Reely Expensive');
+INSERT INTO Boats (name) VALUES ('A Boats');
+INSERT INTO Boats (name) VALUES ('Stinky Anchovy');
+INSERT INTO Boats (name) VALUES ('Wife #4');
+INSERT INTO Boats (name) VALUES ('Poseidon Probe');
+INSERT INTO Boats (name) VALUES ('Sea Señor');
+INSERT INTO Boats (name) VALUES ('Heavy Wetter');
+INSERT INTO Boats (name) VALUES ('Jamaican Me Sail');
+INSERT INTO Boats (name) VALUES ('Get Shipfaced');
+INSERT INTO Boats (name) VALUES ('Spare-a-Beer?');
+INSERT INTO Boats (name) VALUES ('Coral Reefer');
+INSERT INTO Boats (name) VALUES ('Mother Rudder');
+INSERT INTO Boats (name) VALUES ('Nacho Boats');
+INSERT INTO Boats (name) VALUES ('The Other Woman');
+INSERT INTO Boats (name) VALUES ('Poop Deck');
+INSERT INTO Boats (name) VALUES ('Fish Magnet');
+INSERT INTO Boats (name) VALUES ('Tackle Me Elmo');
+INSERT INTO Boats (name) VALUES ('Forced Family Fun');
+INSERT INTO Boats (name) VALUES ('Rubber Ducky');
 
 /* **********************Rubber Ducky Names**************************** */
 INSERT INTO pet (name)

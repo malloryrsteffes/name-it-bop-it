@@ -6,10 +6,10 @@ module.exports = function(app) {
 
   // Select baby boy names by letter
   app.get("/api/boy/:letter", function(req, res) {
-    // Queries 12000 baby boy names from baby table
-    db.Baby.findAll({
-      limit: 12000
-    }).then(function(Baby) {
+
+    // Queries baby boy names from baby table
+    db.Baby.findAll({}).then(function(Baby) {
+
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -34,10 +34,8 @@ module.exports = function(app) {
 
   // Select baby girl names by letter
   app.get("/api/girl/:letter", function(req, res) {
-    // Queries 12000 baby girl names from baby table
-    db.Baby.findAll({
-      limit: 12000
-    }).then(function(Baby) {
+    // Queries baby girl names from baby table
+    db.Baby.findAll({}).then(function(Baby) {
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -65,13 +63,7 @@ module.exports = function(app) {
   // Selects a random boy or girl name based on the route
   app.get("/api/randomizes/:gender", function(req, res) {
     // Queries 12000 baby names (based on route selected) from baby table
-    db.Baby.findAll({
-      limit: 12000
-      // where: {
-      //   name: req.params.name
-      // }
-    }).then(function(Baby) {
-      // res.json(Baby);
+    db.Baby.findAll({}).then(function(Baby) {
 
       var gender = req.params.gender;
 
@@ -181,6 +173,7 @@ module.exports = function(app) {
     });
   });
 
+  //Writes ducky name to the database
   app.post("/add/ducky", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -194,6 +187,7 @@ module.exports = function(app) {
     }
   });
 
+  //Writes pet name to the database
   app.post("/add/pet", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -207,6 +201,7 @@ module.exports = function(app) {
     }
   });
 
+  //Writes boat name to the database
   app.post("/add/boat", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -220,6 +215,7 @@ module.exports = function(app) {
     }
   });
 
+  //Writes boy name to the database
   app.post("/add/boy", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -234,6 +230,7 @@ module.exports = function(app) {
     }
   });
 
+  //Writes girl name to the database
   app.post("/add/girl", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -254,14 +251,17 @@ module.exports = function(app) {
     // Sequelize queries are asynchronous, which helps with perceived speed.
     // If we want something to be guaranteed to happen after the query, we'll use
     // the .then function
-    db.Message.findAll({}).then(function(Message) {
+    db.Message.findAll({
+     
+    }).then(function(Message) {
       // results are available to us inside the .then
-      res.json(Message);
+      res.json(dbMessage);
     });
   });
 
   // Add a message
   app.post("/api/message", function(req, res) {
+
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane message.");
     } else {
@@ -276,5 +276,6 @@ module.exports = function(app) {
         res.end();
       });
     }
+
   });
 };
