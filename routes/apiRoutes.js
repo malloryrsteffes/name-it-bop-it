@@ -250,7 +250,7 @@ module.exports = function(app) {
     // the .then function
     db.Message.findAll({}).then(function(Message) {
       // results are available to us inside the .then
-      res.json(dbMessage);
+      res.json(Message);
     });
   });
 
