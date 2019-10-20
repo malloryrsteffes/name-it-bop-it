@@ -107,8 +107,6 @@ $(document).ready(function() {
     // Prevent default ducky name from being created
     event.preventDefault();
     $("#duckyModal").modal("toggle");
-    $("#newDucky").val("");
-
     var newDucky = {
       name: $("#newDucky").val().trim()
     };
@@ -125,8 +123,7 @@ $(document).ready(function() {
 
         // Data comes back from post as data.name
         console.log("created ducky called " + data.name);
-        // Reload the page to get the updated list
-        //$("#randomDucky").html(data);
+        $("#newDucky").val("");
 
       }
       );
@@ -138,7 +135,6 @@ $(document).ready(function() {
 
       // Prevent default pet name from being created
       event.preventDefault();
-      $("#newPet").val("");
       $("#petModal").modal('toggle');
 
       var newPet = {
@@ -154,11 +150,11 @@ $(document).ready(function() {
         data: newPet
       }).then(
         function(data) {
-
+          
           // Data comes back from post as data.name
           console.log("created pet called " + data.name);
-          // Reload the page to get the updated list
-          //$("#randomPet").html(data);
+          $("#newPet").val("");
+
         }
         );
       });
@@ -187,6 +183,7 @@ $(document).ready(function() {
 
           // Data comes back from post as data.name
           console.log("created boat called " + data.name);
+          $("#newBoat").val("");
 
           }
         );
@@ -199,7 +196,6 @@ $(document).ready(function() {
       // Prevent default boy name from being created
       event.preventDefault();
       $("#boyModal").modal("toggle");
-      $("#newBoy").val("");
 
       var newBoy = {
         name: $("#newBoy").val().trim(),
@@ -218,8 +214,8 @@ $(document).ready(function() {
 
           // Data comes back from post as data.name
           console.log("created boy name " + data.name);
-          // Reload the page to get the updated list
-        //$("#randomBoy").html(data);
+          $("#newBoy").val("");
+
           }
         );
     });
@@ -231,7 +227,6 @@ $(document).ready(function() {
            // Prevent default boy name from being created
           event.preventDefault();
           $("#girlModal").modal("toggle");
-          $("#newGirl").val("");
 
           var newGirl = {
         name: $("#newGirl").val().trim(),
@@ -250,8 +245,8 @@ $(document).ready(function() {
 
         // Data comes back from post as data.name
         console.log("created girl name " + data.name);
-        // Reload the page to get the updated list
-        //$("#randomGirl").html(data);
+        $("#newGirl").val("");
+
          }
       );
     });

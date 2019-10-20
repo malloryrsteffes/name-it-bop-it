@@ -1,14 +1,13 @@
 var db = require("../models");
+var swearjar = require("swearjar");
 
 module.exports = function(app) {
   // BABY NAME ROUTES ==========================================
 
   // Select baby boy names by letter
   app.get("/api/boy/:letter", function(req, res) {
-
     // Queries baby boy names from baby table
     db.Baby.findAll({}).then(function(Baby) {
-
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -63,7 +62,6 @@ module.exports = function(app) {
   app.get("/api/randomizes/:gender", function(req, res) {
     // Queries 12000 baby names (based on route selected) from baby table
     db.Baby.findAll({}).then(function(Baby) {
-
       var gender = req.params.gender;
 
       // Function: Sets a conditional when user chooses between a boy and a girl
@@ -174,58 +172,74 @@ module.exports = function(app) {
 
   //Writes ducky name to the database
   app.post("/add/ducky", function(req, res) {
-    console.log("post ducky " + req.body.name);
-    db.Ducky.create({
-      name: req.body.name
-    }).then(function(dbDucky) {
-      res.json(dbDucky);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post ducky " + req.body.name);
+      db.Ducky.create({
+        name: req.body.name
+      }).then(function(dbDucky) {
+        res.json(dbDucky);
+      });
+    }
   });
 
   //Writes pet name to the database
   app.post("/add/pet", function(req, res) {
-    console.log("post pet " + req.body.name);
-
-    db.Pet.create({
-      name: req.body.name
-    }).then(function(dbPet) {
-      res.json(dbPet);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post pet " + req.body.name);
+      db.Pet.create({
+        name: req.body.name
+      }).then(function(dbPet) {
+        res.json(dbPet);
+      });
+    }
   });
 
   //Writes boat name to the database
   app.post("/add/boat", function(req, res) {
-    console.log("post boat " + req.body.name);
-
-    db.Boat.create({
-      name: req.body.name
-    }).then(function(dbBoat) {
-      res.json(dbBoat);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post boat " + req.body.name);
+      db.Boat.create({
+        name: req.body.name
+      }).then(function(dbBoat) {
+        res.json(dbBoat);
+      });
+    }
   });
 
   //Writes boy name to the database
   app.post("/add/boy", function(req, res) {
-    console.log("post boy " + req.body.name + req.body.gender);
-
-    db.Baby.create({
-      name: req.body.name,
-      gender: req.body.gender
-    }).then(function(dbBaby) {
-      res.json(dbBaby);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post boy " + req.body.name + req.body.gender);
+      db.Baby.create({
+        name: req.body.name,
+        gender: req.body.gender
+      }).then(function(dbBaby) {
+        res.json(dbBaby);
+      });
+    }
   });
 
   //Writes girl name to the database
   app.post("/add/girl", function(req, res) {
-    console.log("post girl " + req.body.name + req.body.gender);
-
-    db.Baby.create({
-      name: req.body.name,
-      gender: req.body.gender
-    }).then(function(dbBaby) {
-      res.json(dbBaby);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post girl " + req.body.name + req.body.gender);
+      db.Baby.create({
+        name: req.body.name,
+        gender: req.body.gender
+      }).then(function(dbBaby) {
+        res.json(dbBaby);
+      });
+    }
   });
 
   // Get all messages
@@ -234,9 +248,7 @@ module.exports = function(app) {
     // Sequelize queries are asynchronous, which helps with perceived speed.
     // If we want something to be guaranteed to happen after the query, we'll use
     // the .then function
-    db.Message.findAll({
-     
-    }).then(function(Message) {
+    db.Message.findAll({}).then(function(Message) {
       // results are available to us inside the .then
       res.json(dbMessage);
     });
@@ -244,30 +256,19 @@ module.exports = function(app) {
 
   // Add a message
   app.post("/api/message", function(req, res) {
-    console.log("Message Data:");
-    console.log(req.body);
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane message.");
+    } else {
+      console.log("Message Data:");
+      console.log(req.body);
 
-    db.Message.create({
-      author: req.body.author,
-      body: req.body.body,
-      createdAt: req.body.createdAt
-    }).then(function(Message) {
-      
-      // `results` here would be the newly created chirp
-      res.json(Message);
-    });
-  });
-
-  app.put("/api/message", function(req, res) {
-    db.Message.update({
-      body: req.body.body
-    }, {
-      where: {
-        id: req.body.id
-      }
-    }). then(function(Message) {
-        res.json(Message)
-
-    });
+      db.Message.create({
+        author: req.body.author,
+        body: req.body.body,
+        created_at: req.body.created_at
+      }).then(function(Message) {
+        res.end();
+      });
+    }
   });
 };
