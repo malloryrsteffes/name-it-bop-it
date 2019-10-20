@@ -170,7 +170,7 @@ module.exports = function(app) {
     });
   });
 
-  //Writes ducky name to the database
+  // Writes ducky name to the database
   app.post("/add/ducky", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -184,7 +184,7 @@ module.exports = function(app) {
     }
   });
 
-  //Writes pet name to the database
+  // Writes pet name to the database
   app.post("/add/pet", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -198,7 +198,7 @@ module.exports = function(app) {
     }
   });
 
-  //Writes boat name to the database
+  // Writes boat name to the database
   app.post("/add/boat", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -212,7 +212,7 @@ module.exports = function(app) {
     }
   });
 
-  //Writes boy name to the database
+  // Writes boy name to the database
   app.post("/add/boy", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -227,7 +227,7 @@ module.exports = function(app) {
     }
   });
 
-  //Writes girl name to the database
+  // Writes girl name to the database
   app.post("/add/girl", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane name.");
@@ -242,19 +242,14 @@ module.exports = function(app) {
     }
   });
 
-  // Get all messages
+  // Get all the messages
   app.get("/api/message", function(req, res) {
-    // Finding all messages, and then returning them to the user as JSON.
-    // Sequelize queries are asynchronous, which helps with perceived speed.
-    // If we want something to be guaranteed to happen after the query, we'll use
-    // the .then function
     db.Message.findAll({}).then(function(Message) {
-      // results are available to us inside the .then
-      res.json(dbMessage);
+      res.json(Message);
     });
   });
 
-  // Add a message
+  // Writes a message to the database
   app.post("/api/message", function(req, res) {
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane message.");
@@ -265,7 +260,7 @@ module.exports = function(app) {
       db.Message.create({
         author: req.body.author,
         body: req.body.body,
-        created_at: req.body.created_at
+        createdAt: req.body.createdAt
       }).then(function(Message) {
         res.end();
       });
