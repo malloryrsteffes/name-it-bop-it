@@ -7,7 +7,7 @@ body {
   background-color: black;
 }
 
-.test {
+.nameYour {
   font-family: 'Anton', sans-serif;
 }
 
@@ -367,5 +367,8 @@ span:hover {
   padding:50px;
   margin:50px;
   font-size:30px;
- 
+}
+
+.notFound{
+  background-color: black;
 }
