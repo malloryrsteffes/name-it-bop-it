@@ -1,12 +1,12 @@
-$(document).ready(function() {
+$(document).ready(function () {
   // On click event delegations for each randomizer button
 
   // PET BUTTON ===================================================
 
-  $("#petRandomizerButton").on("click", function() {
+  $("#petRandomizerButton").on("click", function () {
     $.ajax("/api/pet", {
       method: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -16,10 +16,10 @@ $(document).ready(function() {
 
   // DUCKY BUTTON ===================================================
 
-  $("#duckyRandomizerButton").on("click", function() {
+  $("#duckyRandomizerButton").on("click", function () {
     $.ajax("/api/ducky", {
       method: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -29,10 +29,10 @@ $(document).ready(function() {
 
   // BOAT BUTTON ===================================================
 
-  $("#boatRandomizerButton").on("click", function() {
+  $("#boatRandomizerButton").on("click", function () {
     $.ajax("/api/boat", {
       method: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -42,10 +42,10 @@ $(document).ready(function() {
 
   // BOY BUTTON ==================================================
 
-  $("#boyRandomizerButton").on("click", function() {
+  $("#boyRandomizerButton").on("click", function () {
     $.ajax("/api/randomizes/boy", {
       method: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -55,14 +55,14 @@ $(document).ready(function() {
 
   // BOY FIRST LETTER BUTTON ==================================================
 
-  $(".letter-button2").on("click", function() {
+  $(".letter-button2").on("click", function () {
 
     var letterChosen = $(this).attr("data-letter");
 
     $.ajax({
       url: "/api/boy/" + letterChosen,
       method: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -72,10 +72,10 @@ $(document).ready(function() {
 
   // GIRL BUTTON ==================================================
 
-  $("#girlRandomizerButton").on("click", function() {
+  $("#girlRandomizerButton").on("click", function () {
     $.ajax("/api/randomizes/girl", {
       method: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -85,14 +85,14 @@ $(document).ready(function() {
 
   // GIRL FIRST LETTER BUTTON ==================================================
 
-  $(".letter-button").on("click", function() {
+  $(".letter-button").on("click", function () {
 
     var letterChosen = $(this).attr("data-letter");
 
     $.ajax({
       url: "/api/girl/" + letterChosen,
       method: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
       let el = $("<h1>")
       el.text(data);
       el.addClass("animated bounce");
@@ -102,7 +102,7 @@ $(document).ready(function() {
 
   // DUCKY MODAL ==================================================
 
-  $(".create-form-ducky").on("click", function(event) {
+  $(".create-form-ducky").on("click", function (event) {
 
     // Prevent default ducky name from being created
     event.preventDefault();
@@ -119,195 +119,199 @@ $(document).ready(function() {
       type: "POST",
       data: newDucky
     }).then(
-      function(data) {
+      function (data) {
 
         // Data comes back from post as data.name
         console.log("created ducky called " + data.name);
         $("#newDucky").val("");
 
       }
-      );
-    });
+    );
+  });
 
-    // PET MODAL ==================================================
+  // PET MODAL ==================================================
 
-    $(".create-form-pet").on("click", function(event) {
+  $(".create-form-pet").on("click", function (event) {
 
-      // Prevent default pet name from being created
-      event.preventDefault();
-      $("#petModal").modal('toggle');
+    // Prevent default pet name from being created
+    event.preventDefault();
+    $("#petModal").modal('toggle');
 
-      var newPet = {
-        name: $("#newPet").val().trim()
-      };
+    var newPet = {
+      name: $("#newPet").val().trim()
+    };
 
-      console.log(newPet.name);
-
-
-      // Send the POST request.
-      $.ajax("/add/pet", {
-        type: "POST",
-        data: newPet
-      }).then(
-        function(data) {
-          
-          // Data comes back from post as data.name
-          console.log("created pet called " + data.name);
-          $("#newPet").val("");
-
-        }
-        );
-      });
-
-      // BOAT MODAL ==================================================
-
-    $(".create-form-boat").on("click", function(event) {
-
-      // Prevent default boat name from being created
-      event.preventDefault();
-      $('#boatModal').modal('toggle');
-
-      var newBoat = {
-        name: $("#newBoat").val().trim()
-      };
-
-      console.log(newBoat.name);
+    console.log(newPet.name);
 
 
-      // Send the POST request.
-      $.ajax("/add/boat", {
-        type: "POST",
-        data: newBoat
-      }).then(
-        function(data) {
+    // Send the POST request.
+    $.ajax("/add/pet", {
+      type: "POST",
+      data: newPet
+    }).then(
+      function (data) {
 
-          // Data comes back from post as data.name
-          console.log("created boat called " + data.name);
-          $("#newBoat").val("");
+        // Data comes back from post as data.name
+        console.log("created pet called " + data.name);
+        $("#newPet").val("");
 
-          }
-        );
-      });
+      }
+    );
+  });
 
-      // BOY MODAL ==================================================
+  // BOAT MODAL ==================================================
 
-      $(".create-form-boy").on("click", function(event) {
+  $(".create-form-boat").on("click", function (event) {
 
-      // Prevent default boy name from being created
-      event.preventDefault();
-      $("#boyModal").modal("toggle");
+    // Prevent default boat name from being created
+    event.preventDefault();
+    $('#boatModal').modal('toggle');
 
-      var newBoy = {
-        name: $("#newBoy").val().trim(),
-        gender: "MALE"
-      };
+    var newBoat = {
+      name: $("#newBoat").val().trim()
+    };
 
-      console.log(newBoy.name);
-
-
-      // Send the POST request.
-      $.ajax("/add/boy", {
-        type: "POST",
-        data: newBoy
-        }).then(
-        function(data) {
-
-          // Data comes back from post as data.name
-          console.log("created boy name " + data.name);
-          $("#newBoy").val("");
-
-          }
-        );
-    });
-
-    // GIRL MODAL ==================================================
-
-    $(".create-form-girl").on("click", function(event) {
-
-           // Prevent default boy name from being created
-          event.preventDefault();
-          $("#girlModal").modal("toggle");
-
-          var newGirl = {
-        name: $("#newGirl").val().trim(),
-        gender: "FEMALE"
-      };
-
-      console.log(newGirl.name);
+    console.log(newBoat.name);
 
 
-      // Send the POST request.
-      $.ajax("/add/girl", {
+    // Send the POST request.
+    $.ajax("/add/boat", {
+      type: "POST",
+      data: newBoat
+    }).then(
+      function (data) {
+
+        // Data comes back from post as data.name
+        console.log("created boat called " + data.name);
+        $("#newBoat").val("");
+
+      }
+    );
+  });
+
+  // BOY MODAL ==================================================
+
+  $(".create-form-boy").on("click", function (event) {
+
+    // Prevent default boy name from being created
+    event.preventDefault();
+    $("#boyModal").modal("toggle");
+
+    var newBoy = {
+      name: $("#newBoy").val().trim(),
+      gender: "MALE"
+    };
+
+    console.log(newBoy.name);
+
+
+    // Send the POST request.
+    $.ajax("/add/boy", {
+      type: "POST",
+      data: newBoy
+    }).then(
+      function (data) {
+
+        // Data comes back from post as data.name
+        console.log("created boy name " + data.name);
+        $("#newBoy").val("");
+
+      }
+    );
+  });
+
+  // GIRL MODAL ==================================================
+
+  $(".create-form-girl").on("click", function (event) {
+
+    // Prevent default boy name from being created
+    event.preventDefault();
+    $("#girlModal").modal("toggle");
+
+    var newGirl = {
+      name: $("#newGirl").val().trim(),
+      gender: "FEMALE"
+    };
+
+    console.log(newGirl.name);
+
+
+    // Send the POST request
+    $.ajax("/add/girl", {
       type: "POST",
       data: newGirl
-      }).then(
-      function(data) {
+    }).then(
+      function (data) {
 
         // Data comes back from post as data.name
         console.log("created girl name " + data.name);
         $("#newGirl").val("");
 
-         }
-      );
-    });
+      }
+    );
+  });
 
-    // MESSAGE BUTTON ==================================================
+  // MESSAGE BUTTON ==================================================
 
-    // When user clicks add-btn
-$("#message-submit").on("click", function(event) {
-  event.preventDefault();
+  
+  $("#message-submit").on("click", function (event) {
 
-  // Make a newChat object
-  var newChat = {
-    author: $("#author").val().trim(),
-    body: $("#chat-box").val().trim(),
-    created_at: moment().format("YYYY-MM-DD HH:mm:ss")
-  };
+    // Prevent default comment from being created
+    event.preventDefault();
 
-  console.log(newChat);
+    
+    var newChat = {
+      author: $("#author").val().trim(),
+      body: $("#chat-box").val().trim(),
+      createdAt: moment().format("YYYY-MM-DD HH:mm:ss")
+    };
 
-  // Send an AJAX POST-request with jQuery
-  $.post("/api/message", newChat)
-    // On success, run the following code
-    .then(function() {
+    console.log(newChat);
 
-      var row = $("<div>");
-      row.addClass("chat");
+    // Send the POST request
+    $.post("/api/message", newChat)
+      
+      .then(function () {
 
-      row.append("<p>" + newChat.author + " commented: </p>");
-      row.append("<p>" + newChat.body + "</p>");
-      row.append("<p>At " + moment(newChat.created_at).format("h:mma on dddd") + "</p>");
+        var row = $("<div>");
+        row.addClass("chat");
 
-      $("#chat-area").prepend(row);
+        row.append("<p>" + newChat.author + " commented: </p>");
+        row.append("<p>" + newChat.body + "</p>");
+        row.append("<p>At " + moment(newChat.createdAt).format("h:mma on dddd, MMM Do YY") + "</p>");
 
-    });
+        $("#chat-area").prepend(row);
 
-  // Empty each input box by replacing the value with an empty string
-  $("#author").val("");
-  $("#chat-box").val("");
-});
+      });
 
-// When the page loads, grab all of our chirps
-$.get("/api/message", function(data) {
+    // Empty each input box by replacing the value with an empty string
+    $("#author").val("");
+    $("#chat-box").val("");
+  });
 
-  if (data.length !== 0) {
+  // When the page loads, grab all the messages
+  $.get("/api/message", function (data) {
 
-    for (var i = 0; i < data.length; i++) {
+    if (data.length !== 0) {
 
-      var row = $("<div>");
-      row.addClass("chat");
+      for (var i = 0; i < data.length; i++) {
 
-      row.append("<br>")
-      row.append("<p>" + data[i].author + " commented.. </p>");
-      row.append("<p>" + data[i].body + "</p>");
-      row.append("<p>At " + moment(data[i].createdAt).format("h:mma on dddd") + "</p>");
+        // Creates a new message
+        var row = $("<div>");
+        row.addClass("chat");
 
-      $("#chat-area").prepend(row);
+        row.append("<br>")
+        row.append("<p>" + data[i].author + " commented.. </p>");
+        row.append("<p>" + data[i].body + "</p>");
+        row.append("<p>At " + moment(data[i].createdAt).format("h:mma on dddd, MMM Do YY") + "</p>");
+
+        // Display newly created messages at the top of the message board
+        $("#chat-area").prepend(row);
+
+      }
 
     }
 
-  }
+  });
 
 });
-
-  });
