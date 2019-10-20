@@ -75,6 +75,10 @@ h3 {
   animation: glowing 1500ms infinite;
 }
 
+.randomizerButtons {
+  width: 350px;
+}
+
 #duckyButton {
   -webkit-animation: yellowGlow 1500ms infinite;
   -moz-animation: yellowGlow 1500ms infinite;
@@ -390,20 +394,57 @@ span:hover {
 }
 
 @media screen and (max-width: 480px) {
-  
+  #home{
+    margin-top: 25px;
+    padding-bottom: 50px;
+  }
+  .flex-center {
+    margin-top: 0px;
+  }
+
   .landingPageButtons {
-    text-align: center
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .button {
+    width: 200px;
+    font-size: 35px;
+    margin: 20px;
+  }
+
+  .randomizerButtons {
+    width: 200px;
+    font-size: 30px;
+    margin: 20px;
   }
   /* The wrapper's width will be 600px */
   .wrapper {
     width: 300px;
   }
 
-  .flex-center {
+  #indexPage {
     margin-top: 0px;
+  }
+
+  #messagePage {
+    margin-top: 200px;
+  }
+
+  .columnOne {
+    padding: 0px;
+    margin: 0 auto;
+  }
+
+  .columnTwo {
+    padding: 0px;
+    margin: 0 auto;
   }
 
   h1 {
     font-size: 40px;
+  }
+
+  #scootUpDiv {
+    margin-bottom: 0px;
   }
 }
