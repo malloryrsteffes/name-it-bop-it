@@ -245,6 +245,7 @@ module.exports = function(app) {
   // Get all the messages
   app.get("/api/message", function(req, res) {
     db.Message.findAll({}).then(function(Message) {
+
       res.json(Message);
     });
   });
