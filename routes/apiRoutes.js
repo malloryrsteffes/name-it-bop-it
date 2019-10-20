@@ -6,10 +6,8 @@ module.exports = function(app) {
 
   // Select baby boy names by letter
   app.get("/api/boy/:letter", function(req, res) {
-
     // Queries baby boy names from baby table
     db.Baby.findAll({}).then(function(Baby) {
-
       var letter = req.params.letter.toUpperCase();
 
       var targetedNames = [];
@@ -64,7 +62,6 @@ module.exports = function(app) {
   app.get("/api/randomizes/:gender", function(req, res) {
     // Queries 12000 baby names (based on route selected) from baby table
     db.Baby.findAll({}).then(function(Baby) {
-
       var gender = req.params.gender;
 
       // Function: Sets a conditional when user chooses between a boy and a girl
@@ -251,9 +248,7 @@ module.exports = function(app) {
     // Sequelize queries are asynchronous, which helps with perceived speed.
     // If we want something to be guaranteed to happen after the query, we'll use
     // the .then function
-    db.Message.findAll({
-     
-    }).then(function(Message) {
+    db.Message.findAll({}).then(function(Message) {
       // results are available to us inside the .then
       res.json(dbMessage);
     });
@@ -261,7 +256,6 @@ module.exports = function(app) {
 
   // Add a message
   app.post("/api/message", function(req, res) {
-
     if (swearjar.profane(req.body.name)) {
       console.log("This was a profane message.");
     } else {
@@ -276,6 +270,5 @@ module.exports = function(app) {
         res.end();
       });
     }
-
   });
 };
