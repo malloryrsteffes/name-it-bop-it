@@ -1,4 +1,5 @@
 var db = require("../models");
+var swearjar = require("swearjar");
 
 module.exports = function(app) {
   // BABY NAME ROUTES ==========================================
@@ -181,54 +182,70 @@ module.exports = function(app) {
   });
 
   app.post("/add/ducky", function(req, res) {
-    console.log("post ducky " + req.body.name);
-    db.Ducky.create({
-      name: req.body.name
-    }).then(function(dbDucky) {
-      res.json(dbDucky);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post ducky " + req.body.name);
+      db.Ducky.create({
+        name: req.body.name
+      }).then(function(dbDucky) {
+        res.json(dbDucky);
+      });
+    }
   });
 
   app.post("/add/pet", function(req, res) {
-    console.log("post pet " + req.body.name);
-
-    db.Pet.create({
-      name: req.body.name
-    }).then(function(dbPet) {
-      res.json(dbPet);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post pet " + req.body.name);
+      db.Pet.create({
+        name: req.body.name
+      }).then(function(dbPet) {
+        res.json(dbPet);
+      });
+    }
   });
 
   app.post("/add/boat", function(req, res) {
-    console.log("post boat " + req.body.name);
-
-    db.Boat.create({
-      name: req.body.name
-    }).then(function(dbBoat) {
-      res.json(dbBoat);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post boat " + req.body.name);
+      db.Boat.create({
+        name: req.body.name
+      }).then(function(dbBoat) {
+        res.json(dbBoat);
+      });
+    }
   });
 
   app.post("/add/boy", function(req, res) {
-    console.log("post boy " + req.body.name + req.body.gender);
-
-    db.Baby.create({
-      name: req.body.name,
-      gender: req.body.gender
-    }).then(function(dbBaby) {
-      res.json(dbBaby);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post boy " + req.body.name + req.body.gender);
+      db.Baby.create({
+        name: req.body.name,
+        gender: req.body.gender
+      }).then(function(dbBaby) {
+        res.json(dbBaby);
+      });
+    }
   });
 
   app.post("/add/girl", function(req, res) {
-    console.log("post girl " + req.body.name + req.body.gender);
-
-    db.Baby.create({
-      name: req.body.name,
-      gender: req.body.gender
-    }).then(function(dbBaby) {
-      res.json(dbBaby);
-    });
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane name.");
+    } else {
+      console.log("post girl " + req.body.name + req.body.gender);
+      db.Baby.create({
+        name: req.body.name,
+        gender: req.body.gender
+      }).then(function(dbBaby) {
+        res.json(dbBaby);
+      });
+    }
   });
 
   // Get all messages
@@ -245,15 +262,19 @@ module.exports = function(app) {
 
   // Add a message
   app.post("/api/message", function(req, res) {
-    console.log("Message Data:");
-    console.log(req.body);
+    if (swearjar.profane(req.body.name)) {
+      console.log("This was a profane message.");
+    } else {
+      console.log("Message Data:");
+      console.log(req.body);
 
-    db.Message.create({
-      author: req.body.author,
-      body: req.body.body,
-      created_at: req.body.created_at
-    }).then(function(Message) {
-      res.end();
-    });
+      db.Message.create({
+        author: req.body.author,
+        body: req.body.body,
+        created_at: req.body.created_at
+      }).then(function(Message) {
+        res.end();
+      });
+    }
   });
 };
