@@ -150,8 +150,12 @@ To run this app locally on your computer:
     <li><b>mySQL</b> - connects you to your database via the command line</li> (https://www.npmjs.com/package/express).</li>
     <li><b>express-handlebars</b> - lets you use handlebars to create HTML templates</li> (https://www.npmjs.com/package/express-handlebars)</li>
     <li><b>moment.js</b> - Parse, validate, manipulate, and display dates and times in JavaScript.</li> (https://www.npmjs.com/package/moment)</li>
+    <li><b>Swearjar</b> - Profanity detection and filtering library.</li> (https://www.npmjs.com/package/swearjar</li>
  </ul>
 
+ ### User Input Validation
+ This program uses the Swearjar to avoid vulgar names or messages being added to the site.
+ 
  ### Code Quality
 
  This program uses ESLint to encourage more consistent and readable code, and Travis CI for continuous integration.
